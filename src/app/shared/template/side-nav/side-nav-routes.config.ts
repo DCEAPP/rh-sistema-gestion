@@ -17,7 +17,7 @@ export const ROUTES: SideNavInterface[] = [
     icon: 'appstore',
     submenu: [
       {
-        path: '/gestion-rh/invitado/vacantes',
+        path: '/invitado/vacantes',
         title: 'Vacantes',
         iconType: '',
         icon: '',
@@ -25,7 +25,7 @@ export const ROUTES: SideNavInterface[] = [
         submenu: []
       },
       {
-        path: '/gestion-rh/invitado/solicitudes',
+        path: '/invitado/solicitud',
         title: 'Hacer Solicitud',
         iconType: '',
         icon: '',
@@ -33,7 +33,7 @@ export const ROUTES: SideNavInterface[] = [
         submenu: []
       },
       {
-        path: '/gestion-rh/invitado/evaluacion/prueba-conocimiento',
+        path: '/invitado/examen-conocimiento',
         title: 'Prueba de Conocimiento',
         iconType: '',
         icon: '',
@@ -41,7 +41,7 @@ export const ROUTES: SideNavInterface[] = [
         submenu: []
       },
       {
-        path: '/gestion-rh/invitado/evaluacion/prueba-inteligencia',
+        path: '/invitado/examen-inteligencia',
         title: 'Prueba de Inteligencia',
         iconType: '',
         icon: '',
@@ -49,7 +49,7 @@ export const ROUTES: SideNavInterface[] = [
         submenu: []
       },
       {
-        path: '/gestion-rh/invitado/evaluacion/prueba-psicometrico',
+        path: '/invitado/examen-psicometrico',
         title: 'Prueba Psicometrica',
         iconType: '',
         icon: '',
@@ -99,7 +99,7 @@ export const ROUTES: SideNavInterface[] = [
     icon: 'appstore',
     submenu: [
       {
-        path: '/gestion-rh/proyectos/registro-proyectos',
+        path: '/proyectos/registro-proyectos',
         title: 'Registro',
         iconType: 'nzIcon',
         iconTheme: 'outline',
@@ -107,7 +107,7 @@ export const ROUTES: SideNavInterface[] = [
         submenu: []
       },
       {
-        path: '/gestion-rh/proyectos/consulta-proyectos',
+        path: '/proyectos/consulta-proyectos',
         title: 'Consulta',
         iconType: 'nzIcon',
         iconTheme: 'outline',
@@ -124,7 +124,7 @@ export const ROUTES: SideNavInterface[] = [
     icon: 'appstore',
     submenu: [
       {
-        path: '/gestion-rh/solicitudes/consulta-solicitudes',
+        path: '/solicitudes/consulta-solicitudes',
         title: 'Consulta',
         iconType: 'nzIcon',
         iconTheme: 'outline',
@@ -141,7 +141,7 @@ export const ROUTES: SideNavInterface[] = [
     icon: 'appstore',
     submenu: [
       {
-        path: '/gestion-rh/solicitudes/consulta-evaluacion',
+        path: '/evalucaciones/consulta-evaluaciones',
         title: 'Consulta',
         iconType: 'nzIcon',
         iconTheme: 'outline',
@@ -158,7 +158,7 @@ export const ROUTES: SideNavInterface[] = [
     icon: 'appstore',
     submenu: [
       {
-        path: '/gestion-rh/mantenimiento/catalogo-carreras',
+        path: '/mantenimiento/catalogo-carreras',
         title: 'Catalogo Carreras',
         iconType: 'nzIcon',
         iconTheme: 'outline',
@@ -166,7 +166,7 @@ export const ROUTES: SideNavInterface[] = [
         submenu: []
       },
       {
-        path: '/gestion-rh/solicitudes/catalogo-habilidades',
+        path: '/solicitudes/catalogo-habilidades',
         title: 'Catalogo Habilidades',
         iconType: 'nzIcon',
         iconTheme: 'outline',

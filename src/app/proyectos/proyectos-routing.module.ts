@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {PruebaComponent} from './prueba/prueba.component';
-import {OrganigramaComponent} from './organigrama/organigrama.component';
+import {ConsultaProyectosComponent} from './consulta-proyectos/consulta-proyectos.component';
+
 
 
 const routes: Routes = [
     {
         path: 'organigrama',
-        component: OrganigramaComponent,
+        component: ConsultaProyectosComponent,
         data: {
             title: 'Organigrama',
             headerDisplay: 'none'
@@ -19,4 +19,4 @@ const routes: Routes = [
     imports: [RouterModule.forChild(routes)],
     exports: [RouterModule],
 })
-export class GestionRhRoutingModule { }
+export class ProyectosRoutingModule { }
