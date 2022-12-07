@@ -6,9 +6,9 @@ export const CommonLayout_ROUTES: Routes = [
     loadChildren: () => import('../../dashboard/dashboard.module').then(m => m.DashboardModule),
   },
   {
-    path: 'gestion-rh',
+    path: 'puestos',
     data: {
-      title: 'Gestion RH'
+      title: 'Puestos'
     },
     children: [
       {

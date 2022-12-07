@@ -1,14 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {PruebaComponent} from './prueba/prueba.component';
+import {OrganigramaComponent} from './organigrama/organigrama.component';
 
 
 const routes: Routes = [
     {
-        path: 'prueba',
-        component: PruebaComponent,
+        path: 'organigrama',
+        component: OrganigramaComponent,
         data: {
-            title: 'Prueba',
+            title: 'Organigrama',
             headerDisplay: 'none'
         }
     }
