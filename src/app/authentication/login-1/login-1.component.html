@@ -50,7 +50,7 @@
                                 <nz-form-control>
                                     <div class="d-flex align-items-center justify-content-between">
                                         <span class="font-size-13 text-muted">Don't have an account? <a class="small" [routerLink]="['/authentication/sign-up-1']"> Signup</a></span>
-                                        <button nz-button class="login-form-button" [nzType]="'primary'">Sign In</button>
+                                        <button nz-button class="login-form-button"  (click)="iniciarSesion()" [nzType]="'primary'">Sign In</button>
                                     </div>
                                 </nz-form-control>
                             </nz-form-item>
@@ -58,7 +58,7 @@
                         <ng-template #prefixUser><i nz-icon nzType="user"></i></ng-template>
                         <ng-template #prefixLock><i nz-icon nzType="lock"></i></ng-template>
                     </div>
-                </div>  
+                </div>
             </div>
         </div>
     </div>
