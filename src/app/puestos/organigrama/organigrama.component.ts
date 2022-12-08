@@ -24,13 +24,14 @@ interface MyTreeNode extends TreeNode {
   styleUrls: ['./organigrama.component.css']
 })
 export class OrganigramaComponent implements OnInit {
-
+  isVisible = false;
+  isConfirmLoading = false;
   tree: MyTreeNode = {
     name: 'GERENTE GENERAL',
     description: 'MANUEL FABIAN ROJAS',
     image: 'assets/personas/fabian.jpeg',
     css: 'background-color: #F00000',
-    onClick: () => alert('Death to dogs'),
+    onClick: () => console.log('Click Jefe'),
     children: [
       {
         name: 'ASISTENTE ADMINISTRATIVO',
@@ -222,6 +223,21 @@ export class OrganigramaComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+  showModal(node: any): void {
+    this.isVisible = true;
+  }
+
+  handleOk(): void {
+    this.isConfirmLoading = true;
+    setTimeout(() => {
+      this.isVisible = false;
+      this.isConfirmLoading = false;
+    }, 1000);
+  }
+
+  handleCancel(): void {
+    this.isVisible = false;
   }
 
 }
