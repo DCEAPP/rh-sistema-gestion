@@ -1,13 +1,15 @@
-import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
-import {NzModalRef, NzModalService} from "ng-zorro-antd/modal";
-interface vacantes{
+import {Component, OnInit} from '@angular/core';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import {NzModalRef, NzModalService} from 'ng-zorro-antd/modal';
+
+interface vacantes {
   key: string;
   nombre: string;
   nivel: string[];
   perfil: string[];
   experiencia: string;
   sueldo: number;
+  prestaciones: string;
 }
 
 @Component({
@@ -26,9 +28,10 @@ export class VacantesComponent implements OnInit {
       key: '5',
       nombre: 'AMA DE LLAVES',
       nivel: ['LICENCIATURA'],
-      perfil: ['LIC. EN TURISMO','LIC. EN COMUNICACION'],
+      perfil: ['LIC. EN TURISMO', 'LIC. EN COMUNICACION'],
       experiencia: '1 AÑO',
-      sueldo: 7800
+      sueldo: 7800,
+      prestaciones: 'SEGURO DE VIDA, AGUINALDO'
     },
     {
       key: '6',
@@ -36,7 +39,8 @@ export class VacantesComponent implements OnInit {
       nivel: ['LICENCIATURA'],
       perfil: ['LIC. EN TURISMO'],
       experiencia: '1 AÑO',
-      sueldo: 6200
+      sueldo: 6200,
+      prestaciones: 'SEGURO DE VIDA, AGUINALDO'
     },
     {
       key: '9',
@@ -44,15 +48,17 @@ export class VacantesComponent implements OnInit {
       nivel: ['MEDIO SUPERIOR'],
       perfil: ['PREPARATORIA FINALIZADA'],
       experiencia: '1 AÑO',
-      sueldo: 6200
+      sueldo: 6200,
+      prestaciones: 'SEGURO DE VIDA, AGUINALDO'
     },
     {
       key: '10',
       nombre: 'GERENTE DE BARES',
       nivel: ['LICENCIATURA'],
-      perfil: ['LIC. EN CONTABILIDAD', 'LIC EN ADMINISTRACION DE EMPRESAS','ING.EN GESTION EMPRESARIAL','LIC. EN GASTRONOMIA'],
+      perfil: ['LIC. EN CONTABILIDAD', 'LIC EN ADMINISTRACION DE EMPRESAS', 'ING.EN GESTION EMPRESARIAL', 'LIC. EN GASTRONOMIA'],
       experiencia: '3 AÑOS',
-      sueldo: 13500
+      sueldo: 13500,
+      prestaciones: 'SEGURO DE VIDA, AGUINALDO'
     },
     {
       key: '11',
@@ -60,15 +66,17 @@ export class VacantesComponent implements OnInit {
       nivel: ['SUPERIOR'],
       perfil: ['LIC. GATRONOMIA'],
       experiencia: '3 AÑOS',
-      sueldo: 9000
+      sueldo: 9000,
+      prestaciones: 'SEGURO DE VIDA, AGUINALDO'
     },
     {
       key: '12',
       nombre: 'CAPITAN DE CAMAREROS',
       nivel: ['SUPERIOR'],
-      perfil: ['LIC. GATRONOMIA','LIC. EN CONTABILIDAD','ADMINISTRACION DE EMPRESAS'],
+      perfil: ['LIC. GATRONOMIA', 'LIC. EN CONTABILIDAD', 'ADMINISTRACION DE EMPRESAS'],
       experiencia: '1 AÑO',
-      sueldo: 9000
+      sueldo: 9000,
+      prestaciones: 'SEGURO DE VIDA, AGUINALDO'
     },
     {
       key: '13',
@@ -76,64 +84,114 @@ export class VacantesComponent implements OnInit {
       nivel: ['MEDIA SUPERIOR'],
       perfil: ['PREPARATORIA FINALIZADA'],
       experiencia: '1 AÑO',
-      sueldo: 6000
+      sueldo: 6000,
+      prestaciones: 'SEGURO DE VIDA, AGUINALDO'
     },
     {
       key: '15',
       nombre: 'RECLUTADOR',
       nivel: ['SUPERIOR'],
-      perfil: ['LIC. EN DERECHO','LIC. EN ADMINISTRACION DE EMPRESAS','LIC. EN PSICOLOGIA'],
+      perfil: ['LIC. EN DERECHO', 'LIC. EN ADMINISTRACION DE EMPRESAS', 'LIC. EN PSICOLOGIA'],
       experiencia: '1 AÑO',
-      sueldo: 10000
+      sueldo: 10000,
+      prestaciones: 'SEGURO DE VIDA, AGUINALDO'
     },
     {
       key: '16',
       nombre: 'CAPACITADOR',
       nivel: ['SUPERIOR'],
-      perfil: ['LIC. EN DERECHO','LIC. EN ADMINISTRACION DE EMPRESAS','LIC. EN PSICOLOGIA'],
+      perfil: ['LIC. EN DERECHO', 'LIC. EN ADMINISTRACION DE EMPRESAS', 'LIC. EN PSICOLOGIA'],
       experiencia: '1 AÑO',
-      sueldo: 10000
+      sueldo: 10000,
+      prestaciones: 'SEGURO DE VIDA, AGUINALDO'
     },
     {
       key: '16',
       nombre: 'GERENTE DE COMPRAS',
       nivel: ['SUPERIOR'],
-      perfil: ['LIC. EN ADMINISTRACION DE EMPRESAS','NEGOCIOS INTERNACIONALES','LOGISTICA'],
+      perfil: ['LIC. EN ADMINISTRACION DE EMPRESAS', 'NEGOCIOS INTERNACIONALES', 'LOGISTICA'],
       experiencia: '1 AÑO',
-      sueldo: 10000
+      sueldo: 10000,
+      prestaciones: 'SEGURO DE VIDA, AGUINALDO'
     }
   ];
   listOfDisplayData = [...this.listOfData];
-  constructor(private fb: FormBuilder,private modal: NzModalService) { }
+
+  constructor(private fb: FormBuilder, private modal: NzModalService) {
+  }
 
 
   ngOnInit(): void {
-    this.validateForm = this.fb.group({});
+    this.validateForm = this.fb.group({
+      nombre: '',
+      nivel: [],
+      perfil: [],
+      experiencia: '',
+      sueldo: 0,
+      prestaciones: ''
+    });
     for (let i = 0; i < 10; i++) {
-      this.controlArray.push({ index: i, show: i < 6 });
+      this.controlArray.push({index: i, show: i < 6});
       this.validateForm.addControl(`field${i}`, new FormControl());
     }
 
   }
+
+  editar(): void {
+    console.log('list of data' + this.currentData.nombre);
+    console.log(this.index2);
+    this.listOfDisplayData[this.index2].nombre = this.validateForm.get('nombre').value;
+    this.listOfDisplayData[this.index2].nivel = this.validateForm.get('nivel').value;
+    this.listOfDisplayData[this.index2].perfil = this.validateForm.get('perfil').value;
+    this.listOfDisplayData[this.index2].experiencia = this.validateForm.get('experiencia').value;
+    this.listOfDisplayData[this.index2].sueldo = this.validateForm.get('sueldo').value;
+    this.listOfDisplayData[this.index2].prestaciones = this.validateForm.get('prestaciones').value;
+    this.resetForm();
+    this.isVisible = false;
+    this.isOkLoading = false;
+  }
+
   isVisible = false;
   isOkLoading = false;
 
-  puesto=""
+  puesto = '';
 
   currentData: any;
 
-  showModal(data: any): void {
-    this.currentData = data;
-    this.puesto = data.sueldo;
+  index2: number;
+
+  showModal(index: number, data: any): void {
+
+    if (data) {
+      console.log('BORRAR' + data);
+      this.currentData = data;
+      this.index2 = index;
+      this.validateForm = this.fb.group({
+        nombre: [this.currentData.nombre, ''] ,
+        nivel: [this.currentData.nivel, ''] ,
+        perfil: [this.currentData.perfil, ''] ,
+        experiencia:[this.currentData.experiencia, ''] ,
+        sueldo: [this.currentData.sueldo, ''] ,
+        prestaciones: [this.currentData.prestaciones, ''],
+      });
+    }else {
+      this.validateForm = this.fb.group({
+        nombre: [null, ''] ,
+        nivel: [null, ''] ,
+        perfil: [null, ''] ,
+        experiencia: [ null, ''] ,
+        sueldo: [null, ''] ,
+        prestaciones: [null, ''],
+      });
+    }
+
+
     this.isVisible = true;
   }
 
   handleOk(): void {
     this.isOkLoading = true;
-    setTimeout(() => {
-      this.isVisible = false;
-      this.isOkLoading = false;
-    }, 3000);
+    this.editar();
   }
 
   handleCancel(): void {
@@ -175,7 +233,7 @@ export class VacantesComponent implements OnInit {
     if (this.searchValue == '') {
       this.listOfDisplayData = [...this.listOfData];
     } else {
-      console.log("Buscar" + this.searchValue);
+      console.log('Buscar' + this.searchValue);
       this.listOfDisplayData = this.listOfData.filter((item) => item.nombre.indexOf(this.searchValue) !== -1);
     }
   }
