@@ -1,1 +1,114 @@
-<p>vacantes works!</p>
+<h1>Vacantes</h1>
+<br>
+<div nz-row>
+  <div nz-col [nzSpan]="18" [nzPush]="6">
+    <nz-input-group nzSearch [nzAddOnAfter]="suffixIconButton">
+      <input
+        type="text"
+        nz-input
+        placeholder="BUSCAR"
+        [(ngModel)]="searchValue"
+        (input)="onChange($event)"
+      />
+    </nz-input-group>
+    <ng-template #suffixIconButton>
+      <button nz-button nzType="primary" (click)="search()" nzSearch><span nz-icon nzType="search"></span></button>
+    </ng-template>
+
+  </div>
+  <div nz-col [nzSpan]="6" [nzPull]="18">
+    <button nz-button nzType="primary">AGREGAR VENTAS</button>
+  </div>
+
+</div>
+<br>
+<nz-table #fixedTable [nzTableLayout]="'auto'" nzSize="small" [nzData]="listOfDisplayData">
+  <thead>
+  <tr>
+    <th>NOMBRE</th>
+    <th>PERFIL DESEADO</th>
+    <th>EXPERIENCIA NECESARIA</th>
+    <th>SUELDO INICIAL</th>
+    <th>ACCION</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let data of fixedTable.data">
+    <td>{{ data.nombre}}</td>
+    <td>{{ data.perfil}}</td>
+    <td>{{ data.experiencia }}</td>
+    <td>{{ data.sueldo }}</td>
+    <td>
+      <!--<button class="btn-edicion" nz-button nzType="primary" (click)="showModal(data)">
+        <span>EDITAR</span>
+      </button>-->
+      <!--<button class="btn-edicion" nz-button nzType="primary" (click)="showConfirm()" nzDanger>ELIMINAR</button>-->
+      <span class="btn-delete" nz-icon nzType="delete" (click)="showConfirm()" nzTheme="outline"></span>
+      <span class="btn-edit" nz-icon nzType="edit" (click)="showModal(data)" nzTheme="outline"></span>
+    </td>
+  </tr>
+  </tbody>
+</nz-table>
+
+<nz-modal [(nzVisible)]="isVisible" [nzWidth]="'60%'" nzTitle="The first Modal" (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()">
+  <ng-container *nzModalContent>
+    <form nz-form [formGroup]="validateForm" class="ant-advanced-search-form">
+      <div nz-row [nzGutter]="24">
+        <div nz-col [nzSpan]="12">
+          <nz-form-item>
+            <nz-form-label >Nombre</nz-form-label>
+            <nz-form-control>
+              <input
+                nz-input
+                placeholder="Nombre"
+                value="{{currentData.nombre}}"
+              />
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+
+        <div nz-col [nzSpan]="12">
+          <nz-form-item>
+            <nz-form-label >Perfil</nz-form-label>
+            <nz-form-control>
+              <input
+                nz-input
+                placeholder="Perfil"
+                value="{{currentData.perfil}}"
+              />
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+      </div>
+
+      <div nz-row [nzGutter]="24">
+        <div nz-col [nzSpan]="12">
+          <nz-form-item>
+            <nz-form-label >Experiencia</nz-form-label>
+            <nz-form-control>
+              <input
+                nz-input
+                placeholder="Experiencia"
+                value="{{currentData.experiencia}}"
+              />
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+
+        <div nz-col [nzSpan]="12">
+          <nz-form-item>
+            <nz-form-label >Sueldo</nz-form-label>
+            <nz-form-control>
+              <input
+                nz-input
+                type="number"
+                placeholder="Sueldo"
+                value="{{currentData.sueldo}}"
+              />
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+      </div>
+    </form>
+  </ng-container>
+</nz-modal>
