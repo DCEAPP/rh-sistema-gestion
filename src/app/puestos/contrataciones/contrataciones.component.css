@@ -1,0 +1,88 @@
+p {
+  margin: 0;
+}
+.login-form {
+  max-width: 100%;
+}
+
+.login-form-margin {
+  margin-bottom: 16px;
+}
+
+.login-form-forgot {
+  float: right;
+}
+
+.login-form-button {
+  width: 100%;
+}
+[nz-form] {
+  max-width: 100%;
+}
+
+.btn-edit {
+  color: dodgerblue;
+  font-size: 30px;
+}
+
+.btn-delete {
+  color: red;
+  font-size: 30px;
+}
+
+.btn-edit{
+  color: dodgerblue;
+  font-size: 30px;
+}
+
+.btn-print{
+  color: green;
+  font-size: 30px;
+}
+
+.btn-print:hover{
+  color: #082b08;
+}
+
+.btn-edit:hover {
+  color: #04284b;
+}
+
+.btn-delete:hover {
+  color: #210909;
+}
+
+
+.ant-advanced-search-form {
+  padding: 24px;
+  background: #fbfbfb;
+  border: 1px solid #d9d9d9;
+  border-radius: 6px;
+}
+
+.search-result-list {
+  margin-top: 16px;
+  border: 1px dashed #e9e9e9;
+  border-radius: 6px;
+  background-color: #fafafa;
+  min-height: 200px;
+  text-align: center;
+  padding-top: 80px;
+}
+
+[nz-form-label] {
+  overflow: visible;
+}
+
+button {
+  margin-left: 8px;
+}
+
+.collapse {
+  margin-left: 8px;
+  font-size: 12px;
+}
+
+.search-area {
+  text-align: right;
+}
