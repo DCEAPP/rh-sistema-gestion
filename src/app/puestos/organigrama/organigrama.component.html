@@ -9,8 +9,8 @@
 
 <!-- Node Template -->
 <ng-template #nodeTemplate let-node>
-  <div class="chart-node">
-    <img width="80" height="80" [src]="node?.image" alt="">
+  <div class="chart-node center">
+    <img class="dot"  width="80" height="80" [src]="node?.image" alt="">
     <div style="color: white" class="name">{{node?.name}}</div>
     <div style="color: white" class="description">{{node?.description}} </div>
     <!-- An ugly button to fold/unfold -->
