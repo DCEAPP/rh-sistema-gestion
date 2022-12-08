@@ -1,0 +1,104 @@
+[nz-form] {
+  max-width: 1200px;
+}
+
+nz-avatar {
+  margin-top: 16px;
+  margin-right: 16px;
+  background-color: #1B396A;
+}
+
+nz-select {
+  width: 200px;
+  margin-bottom: 15px;
+}
+
+.select-con{
+  width: 300px;
+}
+
+.phone-select {
+  width: 70px;
+}
+
+.register-are {
+  margin-bottom: 8px;
+}
+
+.dynamic-delete-button {
+  cursor: pointer;
+  position: relative;
+  top: 4px;
+  font-size: 24px;
+  color: #999;
+  transition: all 0.3s;
+}
+.form-estudios{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  text-align: center;
+}
+
+.form-trabajo{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  text-align: center;
+}
+
+nz-form-item{
+  padding: 15px;
+}
+
+p{
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.btn{
+  background-color: green;
+  border: none;
+  border-radius: 15px;
+  color: #fff0ff;
+  padding: 5px;
+  width: 150px;
+  cursor: pointer;
+  margin-left: 450px;
+}
+
+#btn1{
+  margin-top: 15px;
+  margin-left: -100px;
+}
+:host ::ng-deep .avatar-uploader > .ant-upload {
+  width: 128px;
+  height: 128px;
+}
+input{
+  text-align: center;
+}
+.dynamic-delete-button:hover {
+  color: #777;
+}
+
+.passenger-input {
+  width: 60%;
+  margin-right: 8px;
+}
+
+[nz-form] {
+  max-width: 1200px;
+  text-align: center;
+}
+
+.add-button {
+  width: 60%;
+}
+
+nz-collapse-panel{
+  text-align: left;
+}
+.editable-tag {
+  background: rgb(255, 255, 255);
+  border-style: dashed;
+}
+
