@@ -10,11 +10,13 @@ import {NzCardModule} from 'ng-zorro-antd/card';
 import {NzTableModule} from 'ng-zorro-antd/table';
 import {NzDividerModule} from 'ng-zorro-antd/divider';
 import {NzGridModule} from 'ng-zorro-antd/grid';
-import {OrgChartModule} from 'angular13-organization-chart';
+
 import {OrganigramaComponent} from './organigrama/organigrama.component';
 import {PuestosRoutingModule} from './puestos-routing.module';
 import { VacantesComponent } from './vacantes/vacantes.component';
 import { ContratacionesComponent } from './contrataciones/contrataciones.component';
+import {NzModalModule} from 'ng-zorro-antd/modal';
+import {OrgChartModule} from './modules/org-chart/org-chart.module';
 
 /* Assign all ng-zorro modules to this array*/
 const antdModule = [
@@ -22,17 +24,18 @@ const antdModule = [
 ];
 
 @NgModule({
-  imports: [
-    SharedModule,
-    PuestosRoutingModule,
-    ...antdModule,
-    NzSwitchModule,
-    NzCardModule,
-    NzTableModule,
-    NzDividerModule,
-    NzGridModule,
-    OrgChartModule
-  ],
+    imports: [
+        SharedModule,
+        PuestosRoutingModule,
+        ...antdModule,
+        NzSwitchModule,
+        NzCardModule,
+        NzTableModule,
+        NzDividerModule,
+        NzGridModule,
+        OrgChartModule,
+        NzModalModule
+    ],
   exports: [],
   declarations: [
     OrganigramaComponent,
