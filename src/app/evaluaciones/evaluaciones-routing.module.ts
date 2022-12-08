@@ -6,10 +6,10 @@ import {ConsultaEvaluacionesComponent} from './consulta-evaluaciones/consulta-ev
 
 const routes: Routes = [
     {
-        path: 'organigrama',
+        path: 'evaluaciones',
         component: ConsultaEvaluacionesComponent,
         data: {
-            title: 'Organigrama',
+            title: 'Evaluaciones',
             headerDisplay: 'none'
         }
     }
