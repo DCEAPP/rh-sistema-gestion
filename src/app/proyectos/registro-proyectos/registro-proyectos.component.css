@@ -1,0 +1,112 @@
+p{
+  font-size: 25px;
+}
+form{
+
+}
+
+nz-form-label{
+  text-transform: uppercase;
+  margin-right: 10px;
+}
+
+
+nz-form-item{
+  margin-right: 20px;
+}
+
+label{
+  text-transform: uppercase;
+}
+
+.login-form {
+  max-width: 300px;
+}
+
+
+.login-form-forgot {
+  float: right;
+}
+
+input{
+  width: 100%;
+}
+
+.dynamic-delete-button {
+  cursor: pointer;
+  position: relative;
+  top: 4px;
+  font-size: 24px;
+  color: #999;
+  transition: all 0.3s;
+}
+
+
+
+.dynamic-delete-button:hover {
+  color: #777;
+}
+
+.passenger-input {
+  width: 90%;
+  margin-right: 20px;
+}
+
+
+
+[nz-form] {
+  max-width: 100%;
+}
+
+
+nz-date-picker,
+nz-range-picker {
+  width: 100%;
+}
+
+h4 {
+  margin: 16px 0;
+  font-size: 14px;
+  line-height: 1;
+  font-weight: normal;
+}
+
+h4:first-child {
+  margin-top: 0;
+}
+
+[nz-button] {
+  margin-top: 12px;
+  margin-bottom: 12px;
+  width: 100%;
+}
+
+.add-button{
+  width: 70%;
+}
+
+
+nz-form-item{
+  margin-right: 10px;
+}
+
+
+nz-input-number {
+  width: 100%;
+}
+
+nz-mention{
+  width: 100%;
+}
+
+nz-tabset{
+  margin-bottom: 12px;
+}
+
+nz-select {
+  width: 100%;
+}
+
+.loading-icon {
+  margin-right: 8px;
+}

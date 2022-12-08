@@ -14,6 +14,15 @@ import {OrgChartModule} from 'angular13-organization-chart';
 import {ProyectosRoutingModule} from './proyectos-routing.module';
 import {RegistroProyectosComponent} from './registro-proyectos/registro-proyectos.component';
 import {ConsultaProyectosComponent} from './consulta-proyectos/consulta-proyectos.component';
+import {NzMentionModule} from "ng-zorro-antd/mention";
+import {ReactiveFormsModule} from "@angular/forms";
+import {NzFormModule} from "ng-zorro-antd/form";
+import {NzInputModule} from "ng-zorro-antd/input";
+import {NzDatePickerModule} from "ng-zorro-antd/date-picker";
+import {NzInputNumberModule} from "ng-zorro-antd/input-number";
+import {NzCheckboxModule} from "ng-zorro-antd/checkbox";
+import {NzSelectModule} from "ng-zorro-antd/select";
+import {NzTabsModule} from "ng-zorro-antd/tabs";
 
 
 
@@ -33,7 +42,16 @@ const antdModule = [
     NzTableModule,
     NzDividerModule,
     NzGridModule,
-    OrgChartModule
+    OrgChartModule,
+    NzMentionModule,
+    ReactiveFormsModule,
+    NzFormModule,
+    NzInputModule,
+    NzDatePickerModule,
+    NzInputNumberModule,
+    NzCheckboxModule,
+    NzSelectModule,
+    NzTabsModule
   ],
   exports: [],
   declarations: [
