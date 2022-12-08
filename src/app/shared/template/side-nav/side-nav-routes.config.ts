@@ -141,7 +141,7 @@ export const ROUTES: SideNavInterface[] = [
     icon: 'appstore',
     submenu: [
       {
-        path: '/evalucaciones/consulta-evaluaciones',
+        path: '/evaluaciones/consulta-evaluaciones',
         title: 'Consulta',
         iconType: 'nzIcon',
         iconTheme: 'outline',
@@ -166,7 +166,7 @@ export const ROUTES: SideNavInterface[] = [
         submenu: []
       },
       {
-        path: '/solicitudes/catalogo-habilidades',
+        path: '/mantenimiento/catalogo-habilidades',
         title: 'Catalogo Habilidades',
         iconType: 'nzIcon',
         iconTheme: 'outline',

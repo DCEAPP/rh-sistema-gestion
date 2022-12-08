@@ -11,7 +11,7 @@ const routes: Routes = [
     path: 'examen-conocimiento',
     component: ExamenConocimientoComponent,
     data: {
-      title: 'Organigrama',
+      title: 'Examen Conocimienot',
       headerDisplay: 'none'
     }
   },
@@ -19,7 +19,7 @@ const routes: Routes = [
     path: 'examen-inteligencia',
     component: ExamenInteligenciaComponent,
     data: {
-      title: 'Organigrama',
+      title: 'Examen Inteligencia',
       headerDisplay: 'none'
     }
   },
@@ -27,7 +27,7 @@ const routes: Routes = [
     path: 'examen-psicometrico',
     component: ExamenPsicometricoComponent,
     data: {
-      title: 'Organigrama',
+      title: 'Examen Psicomentrico',
       headerDisplay: 'none'
     }
   },
@@ -35,7 +35,7 @@ const routes: Routes = [
     path: 'solicitud',
     component: SolicitudComponent,
     data: {
-      title: 'Organigrama',
+      title: 'Solicitud',
       headerDisplay: 'none'
     }
   },
@@ -43,7 +43,7 @@ const routes: Routes = [
     path: 'vacantes',
     component: VacantesComponent,
     data: {
-      title: 'Organigrama',
+      title: 'Vacantes',
       headerDisplay: 'none'
     }
   }

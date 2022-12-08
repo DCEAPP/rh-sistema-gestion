@@ -9,7 +9,7 @@ const routes: Routes = [
     path: 'consulta-proyectos',
     component: ConsultaProyectosComponent,
     data: {
-      title: 'Organigrama',
+      title: 'Consulta Proyectos',
       headerDisplay: 'none'
     }
   },
@@ -17,7 +17,7 @@ const routes: Routes = [
     path: 'registro-proyectos',
     component: RegistroProyectosComponent,
     data: {
-      title: 'Organigrama',
+      title: 'Registro Proyectos',
       headerDisplay: 'none'
     }
   }

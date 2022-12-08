@@ -8,7 +8,7 @@ const routes: Routes = [
     path: 'catalogo-carreras',
     component: CatalogoCarrerasComponent,
     data: {
-      title: 'Organigrama',
+      title: 'Catalogo Carreras',
       headerDisplay: 'none'
     }
   },
@@ -16,7 +16,7 @@ const routes: Routes = [
     path: 'catalogo-habilidades',
     component: CatalogoHabilidadesComponent,
     data: {
-      title: 'Organigrama',
+      title: 'Catalogo Habilidades',
       headerDisplay: 'none'
     }
   }
