@@ -1,1 +1,118 @@
-<p>consulta-proyectos works!</p>
+
+<nz-descriptions nzTitle="CONTACTOS" >
+
+
+
+  <nz-descriptions-item nzTitle="AVISO">
+    <span nz-typography>
+    <strong><a  target="_blank">
+
+      FAVOR DE NOTIFICAR CUANDO SE REALICE EL EVENTO
+      PARA TOMAR LAS MEDIDAS NECESARIAS
+
+      </a></strong>
+
+    </span>
+  </nz-descriptions-item>
+  <nz-descriptions-item nzTitle="Direccion">
+    <span nz-typography>
+    <strong><a target="_blank">
+        VICENTE GUERRERO #323, CENTRO, OAXACA, OAXACA
+
+      </a></strong>
+
+    </span>
+    <nz-descriptions-item nzTitle="/n"></nz-descriptions-item>
+  </nz-descriptions-item>
+
+  <nz-descriptions-item nzTitle="TELEFONO">
+     <span nz-typography>
+    <strong><a target="_blank">
+
+      951 360 2545
+
+      </a></strong>
+
+    </span>
+  </nz-descriptions-item>
+  <nz-descriptions-item nzTitle="Facebook">
+
+     <span nz-typography>
+
+    <strong><a  target="_blank">
+        HOTEL VIP
+
+      </a></strong>
+
+    </span>
+
+
+  </nz-descriptions-item>
+
+
+  <nz-descriptions-item><div class="icons-list">
+    <span nz-icon [nzIconfont]="'icon-tuichu'"></span>
+    <span nz-icon [nzIconfont]="'icon-facebook'"></span>
+    <span nz-icon [nzIconfont]="'icon-twitter'"></span>
+    <span nz-icon nzType="whats-app" nzTheme="outline"></span>
+  </div></nz-descriptions-item>
+
+</nz-descriptions>
+
+
+
+<nz-table #nzTable [nzData]="listOfDisplayData" nzTableLayout="fixed">
+  <thead>
+  <tr>
+    <th nzWidth="60px"></th>
+    <th nzCustomFilter>
+      EVENTO
+      <nz-filter-trigger [(nzVisible)]="visible" [nzActive]="searchValue.length > 0" [nzDropdownMenu]="menu">
+        <span nz-icon nzType="search"></span>
+      </nz-filter-trigger>
+    </th>
+    <th><strong>TITULO</strong></th>
+    <th><strong>FECHA DE INICIO</strong></th>
+    <th><strong>PERSONAL</strong></th>
+    <th><strong>LUGAR</strong></th>
+    <th><strong>PRESUPUESTO</strong></th>
+  </tr>
+  </thead>
+  <tbody>
+
+  <ng-container *ngFor="let data of nzTable.data" >
+
+    <tr>
+      <td [nzExpand]="expandSet.has(data.id)" (nzExpandChange)="onExpandChange(data.id, $event)"></td>
+      <td>{{ data.EVENTO}}</td>
+      <td>{{ data.TITULO}}</td>
+      <td>{{ data.FECHADEINICIO }}</td>
+      <td>{{ data.PERSONAL }}</td>
+      <td>{{ data.LUGAR }}</td>
+      <td>{{ data.presupuesto }}</td>
+      <td>
+        <a
+
+          nz-popconfirm nzPopconfirmTitle="DESEAS BORRARLO?"  (nzOnConfirm)="deleteRow(data.id)"  >BORRAR
+          <span nz-icon nzType="delete" nzTheme="outline"></span></a>
+
+    </tr>
+    <tr [nzExpand]="expandSet.has(data.id)">
+      <th>DESCRIPCION DEL PROYECO</th>
+      <span>{{ data.description }}</span>
+    </tr>
+  </ng-container>
+
+
+
+  </tbody>
+</nz-table>
+<nz-dropdown-menu #menu="nzDropdownMenu">
+  <div class="ant-table-filter-dropdown">
+    <div class="search-box">
+      <input type="text" nz-input placeholder="BUSCAR EVENTO" [(ngModel)]="searchValue" />
+      <button nz-button nzSize="small" nzType="primary" (click)="buscar()" class="search-button">BUSCAR</button>
+      <button nz-button nzSize="small" (click)="reiniciar()">REINICIAR</button>
+    </div>
+  </div>
+</nz-dropdown-menu>
