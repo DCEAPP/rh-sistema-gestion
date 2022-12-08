@@ -67,7 +67,7 @@ export class VacantesComponent implements OnInit {
       nombre: 'CAPITAN DE CAMAREROS',
       nivel: ['SUPERIOR'],
       perfil: ['LIC. GATRONOMIA','LIC. EN CONTABILIDAD','ADMINISTRACION DE EMPRESAS'],
-      experiencia: '1 AÑOS',
+      experiencia: '1 AÑO',
       sueldo: 9000
     },
     {
@@ -75,7 +75,7 @@ export class VacantesComponent implements OnInit {
       nombre: 'CAMAREROS',
       nivel: ['MEDIA SUPERIOR'],
       perfil: ['PREPARATORIA FINALIZADA'],
-      experiencia: '1 AÑOS',
+      experiencia: '1 AÑO',
       sueldo: 6000
     },
     {
@@ -83,7 +83,7 @@ export class VacantesComponent implements OnInit {
       nombre: 'RECLUTADOR',
       nivel: ['SUPERIOR'],
       perfil: ['LIC. EN DERECHO','LIC. EN ADMINISTRACION DE EMPRESAS','LIC. EN PSICOLOGIA'],
-      experiencia: '1 AÑOS',
+      experiencia: '1 AÑO',
       sueldo: 10000
     },
     {
@@ -91,7 +91,7 @@ export class VacantesComponent implements OnInit {
       nombre: 'CAPACITADOR',
       nivel: ['SUPERIOR'],
       perfil: ['LIC. EN DERECHO','LIC. EN ADMINISTRACION DE EMPRESAS','LIC. EN PSICOLOGIA'],
-      experiencia: '1 AÑOS',
+      experiencia: '1 AÑO',
       sueldo: 10000
     },
     {
@@ -99,7 +99,7 @@ export class VacantesComponent implements OnInit {
       nombre: 'GERENTE DE COMPRAS',
       nivel: ['SUPERIOR'],
       perfil: ['LIC. EN ADMINISTRACION DE EMPRESAS','NEGOCIOS INTERNACIONALES','LOGISTICA'],
-      experiencia: '1 AÑOS',
+      experiencia: '1 AÑO',
       sueldo: 10000
     }
   ];

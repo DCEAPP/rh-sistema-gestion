@@ -16,6 +16,8 @@ import { SolicitudComponent } from './solicitud/solicitud.component';
 import { ExamenConocimientoComponent } from './examen-conocimiento/examen-conocimiento.component';
 import { ExamenInteligenciaComponent } from './examen-inteligencia/examen-inteligencia.component';
 import { ExamenPsicometricoComponent } from './examen-psicometrico/examen-psicometrico.component';
+import {NzInputModule} from 'ng-zorro-antd/input';
+import {NzDescriptionsModule} from 'ng-zorro-antd/descriptions';
 
 /* Assign all ng-zorro modules to this array*/
 const antdModule = [
@@ -32,7 +34,9 @@ const antdModule = [
     NzTableModule,
     NzDividerModule,
     NzGridModule,
-    OrgChartModule
+    OrgChartModule,
+    NzInputModule,
+    NzDescriptionsModule
   ],
   exports: [],
   declarations: [

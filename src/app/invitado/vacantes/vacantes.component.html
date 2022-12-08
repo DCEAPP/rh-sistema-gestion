@@ -1,1 +1,39 @@
-<p>vacantes works!</p>
+<h1>¡POSTULATE!</h1>
+<div style="margin-bottom: 10px" nz-row>
+  <div nz-col nzSpan="8">
+    <nz-input-group [nzSuffix]="suffixIconSearch">
+    <input type="text" nz-input placeholder="BUSCAR EMPLEO" />
+    </nz-input-group></div>
+  <ng-template #suffixIconSearch>
+    <span nz-icon nzType="search"></span>
+  </ng-template>
+ </div>
+
+  <div nz-row>
+
+    <div nz-col nzSpan="24">
+
+      <div *ngFor="let data of listOfData">
+        <nz-card style="width:95%; margin-right: 5px" nzTitle="{{data.nombre}}" [nzExtra]="extraTemplate">
+          <nz-descriptions nzTitle="INFORMACION DE LA VACANTE">
+            <nz-descriptions-item nzTitle="NIVEL EDUCATIVO">{{data.nivel}}</nz-descriptions-item>
+            <nz-descriptions-item nzTitle="PERFIL ACADEMICO">{{data.perfil}}</nz-descriptions-item>
+            <nz-descriptions-item nzTitle="EXPERIENCIA NECESARIA">{{data.experiencia}}</nz-descriptions-item>
+            <nz-descriptions-item nzTitle="SUELDO INICIAL">${{data.sueldo}}</nz-descriptions-item>
+          </nz-descriptions>
+        </nz-card>
+        <ng-template #extraTemplate>
+          <a>POSTULARME</a>
+        </ng-template>
+      </div>
+
+  </div>
+
+</div>
+
+
+
+
+
+
+
