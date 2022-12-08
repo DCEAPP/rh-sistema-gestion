@@ -15,8 +15,15 @@ import {OrganigramaComponent} from './organigrama/organigrama.component';
 import {PuestosRoutingModule} from './puestos-routing.module';
 import { VacantesComponent } from './vacantes/vacantes.component';
 import { ContratacionesComponent } from './contrataciones/contrataciones.component';
+
+
+import {NzInputModule} from 'ng-zorro-antd/input';
+import {NzFormModule} from 'ng-zorro-antd/form';
 import {NzModalModule} from 'ng-zorro-antd/modal';
+import {ReactiveFormsModule} from '@angular/forms';
 import {OrgChartModule} from './modules/org-chart/org-chart.module';
+
+
 
 /* Assign all ng-zorro modules to this array*/
 const antdModule = [
@@ -24,18 +31,21 @@ const antdModule = [
 ];
 
 @NgModule({
-    imports: [
-        SharedModule,
-        PuestosRoutingModule,
-        ...antdModule,
-        NzSwitchModule,
-        NzCardModule,
-        NzTableModule,
-        NzDividerModule,
-        NzGridModule,
-        OrgChartModule,
-        NzModalModule
-    ],
+  imports: [
+    SharedModule,
+    PuestosRoutingModule,
+    ...antdModule,
+    NzSwitchModule,
+    NzCardModule,
+    NzTableModule,
+    NzDividerModule,
+    NzGridModule,
+    OrgChartModule,
+    NzInputModule,
+    NzFormModule,
+    NzModalModule,
+    ReactiveFormsModule
+  ],
   exports: [],
   declarations: [
     OrganigramaComponent,
