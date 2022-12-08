@@ -40,7 +40,7 @@ export class VacantesComponent implements OnInit {
       perfil: ['LIC. EN TURISMO'],
       experiencia: '1 AÑO',
       sueldo: 6200,
-      prestaciones: 'SEGURO DE VIDA, AGUINALDO'
+      prestaciones: 'SEGURO DE VIDA, AGUINALDO, VACACIONES'
     },
     {
       key: '9',
@@ -49,7 +49,7 @@ export class VacantesComponent implements OnInit {
       perfil: ['PREPARATORIA FINALIZADA'],
       experiencia: '1 AÑO',
       sueldo: 6200,
-      prestaciones: 'SEGURO DE VIDA, AGUINALDO'
+      prestaciones: 'SEGURO DE VIDA, VACACIONES'
     },
     {
       key: '10',
@@ -76,7 +76,7 @@ export class VacantesComponent implements OnInit {
       perfil: ['LIC. GATRONOMIA', 'LIC. EN CONTABILIDAD', 'ADMINISTRACION DE EMPRESAS'],
       experiencia: '1 AÑO',
       sueldo: 9000,
-      prestaciones: 'SEGURO DE VIDA, AGUINALDO'
+      prestaciones: 'SEGURO DE VIDA, VACACIONES'
     },
     {
       key: '13',
@@ -94,7 +94,7 @@ export class VacantesComponent implements OnInit {
       perfil: ['LIC. EN DERECHO', 'LIC. EN ADMINISTRACION DE EMPRESAS', 'LIC. EN PSICOLOGIA'],
       experiencia: '1 AÑO',
       sueldo: 10000,
-      prestaciones: 'SEGURO DE VIDA, AGUINALDO'
+      prestaciones: 'SEGURO DE VIDA, VACACIONES'
     },
     {
       key: '16',
@@ -103,7 +103,7 @@ export class VacantesComponent implements OnInit {
       perfil: ['LIC. EN DERECHO', 'LIC. EN ADMINISTRACION DE EMPRESAS', 'LIC. EN PSICOLOGIA'],
       experiencia: '1 AÑO',
       sueldo: 10000,
-      prestaciones: 'SEGURO DE VIDA, AGUINALDO'
+      prestaciones: 'SEGURO DE VIDA, VACACIONES'
     },
     {
       key: '16',
@@ -112,7 +112,7 @@ export class VacantesComponent implements OnInit {
       perfil: ['LIC. EN ADMINISTRACION DE EMPRESAS', 'NEGOCIOS INTERNACIONALES', 'LOGISTICA'],
       experiencia: '1 AÑO',
       sueldo: 10000,
-      prestaciones: 'SEGURO DE VIDA, AGUINALDO'
+      prestaciones: 'SEGURO DE VIDA, AGUINALDO, VACACIONES'
     }
   ];
   listOfDisplayData = [...this.listOfData];
@@ -151,6 +151,10 @@ export class VacantesComponent implements OnInit {
     this.isOkLoading = false;
   }
 
+  borrar(index: number) {
+    this.listOfDisplayData = this.listOfDisplayData.filter(item => item !== this.listOfDisplayData[index]);
+  }
+
   isVisible = false;
   isOkLoading = false;
 
@@ -167,20 +171,20 @@ export class VacantesComponent implements OnInit {
       this.currentData = data;
       this.index2 = index;
       this.validateForm = this.fb.group({
-        nombre: [this.currentData.nombre, ''] ,
-        nivel: [this.currentData.nivel, ''] ,
-        perfil: [this.currentData.perfil, ''] ,
-        experiencia:[this.currentData.experiencia, ''] ,
-        sueldo: [this.currentData.sueldo, ''] ,
+        nombre: [this.currentData.nombre, ''],
+        nivel: [this.currentData.nivel, ''],
+        perfil: [this.currentData.perfil, ''],
+        experiencia: [this.currentData.experiencia, ''],
+        sueldo: [this.currentData.sueldo, ''],
         prestaciones: [this.currentData.prestaciones, ''],
       });
-    }else {
+    } else {
       this.validateForm = this.fb.group({
-        nombre: [null, ''] ,
-        nivel: [null, ''] ,
-        perfil: [null, ''] ,
-        experiencia: [ null, ''] ,
-        sueldo: [null, ''] ,
+        nombre: [null, ''],
+        nivel: [null, ''],
+        perfil: [null, ''],
+        experiencia: [null, ''],
+        sueldo: [null, ''],
         prestaciones: [null, ''],
       });
     }
@@ -198,13 +202,15 @@ export class VacantesComponent implements OnInit {
     this.isVisible = false;
   }
 
-  showConfirm(): void {
+  showConfirm(index: number): void {
+
     this.confirmModal = this.modal.confirm({
       nzTitle: 'Deseas eliminar esta vacante?',
       nzContent: 'OK para confirmar',
       nzOnOk: () =>
         new Promise((resolve, reject) => {
           setTimeout(Math.random() > 0.5 ? resolve : reject, 1000);
+          this.borrar(index);
         }).catch(() => console.log('Oops errors!'))
     });
   }

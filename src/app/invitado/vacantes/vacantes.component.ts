@@ -33,7 +33,7 @@ export class VacantesComponent implements OnInit {
       perfil: ['LIC. EN TURISMO'],
       experiencia: '1 AÑO',
       sueldo: 6200.00,
-      prestaciones: 'SEGURO DE VIDA, AGUINALDO'
+      prestaciones: 'SEGURO DE VIDA, AGUINALDO, VACACIONES'
     },
     {
       key: '9',
@@ -42,7 +42,7 @@ export class VacantesComponent implements OnInit {
       perfil: ['PREPARATORIA FINALIZADA'],
       experiencia: '1 AÑO',
       sueldo: 6200.00,
-      prestaciones: 'SEGURO DE VIDA, AGUINALDO'
+      prestaciones: 'SEGURO DE VIDA, VACACIONES'
     },
     {
       key: '10',
@@ -60,7 +60,7 @@ export class VacantesComponent implements OnInit {
       perfil: ['LIC. GATRONOMIA'],
       experiencia: '3 AÑOS',
       sueldo: 9000.00,
-      prestaciones: 'SEGURO DE VIDA, AGUINALDO'
+      prestaciones: 'SEGURO DE VIDA,VACACIONES'
     },
     {
       key: '12',
@@ -69,7 +69,7 @@ export class VacantesComponent implements OnInit {
       perfil: ['LIC. GATRONOMIA','LIC. EN CONTABILIDAD','ADMINISTRACION DE EMPRESAS'],
       experiencia: '1 AÑO',
       sueldo: 9000.00,
-      prestaciones:'SEGURO DE VIDA, AGUINALDO'
+      prestaciones:'SEGURO DE VIDA, VACACIONES '
     },
     {
       key: '13',
@@ -87,7 +87,7 @@ export class VacantesComponent implements OnInit {
       perfil: ['LIC. EN DERECHO','LIC. EN ADMINISTRACION DE EMPRESAS','LIC. EN PSICOLOGIA'],
       experiencia: '1 AÑO',
       sueldo: 10000.00,
-      prestaciones: 'SEGURO DE VIDA, AGUINALDO'
+      prestaciones: 'SEGURO DE VIDA, VACACIONES'
     },
     {
       key: '16',
@@ -96,7 +96,7 @@ export class VacantesComponent implements OnInit {
       perfil: ['LIC. EN DERECHO','LIC. EN ADMINISTRACION DE EMPRESAS','LIC. EN PSICOLOGIA'],
       experiencia: '1 AÑO',
       sueldo: 10000.00,
-      prestaciones: 'SEGURO DE VIDA, AGUINALDO'
+      prestaciones: 'SEGURO DE VIDA, AGUINALDO, VACACIONES'
     },
     {
       key: '16',
@@ -105,7 +105,7 @@ export class VacantesComponent implements OnInit {
       perfil: ['LIC. EN ADMINISTRACION DE EMPRESAS','NEGOCIOS INTERNACIONALES','LOGISTICA'],
       experiencia: '1 AÑO',
       sueldo: 10000.00,
-      prestaciones: 'SEGURO DE VIDA, AGUINALDO'
+      prestaciones: 'SEGURO DE VIDA, AGUINALDO, VACACIONES, '
     }
   ];
   constructor() { }
