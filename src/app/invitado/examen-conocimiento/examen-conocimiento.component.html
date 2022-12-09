@@ -1,4 +1,3 @@
-
 <h1>EXAMEN DE CONOCIMIENTO</h1>
 
 <p>INSTRUCCIONES:
@@ -8,13 +7,18 @@
   No marque más de una.
 </p>
 
+<nz-steps [nzCurrent]="current">
+  <nz-step nzTitle="PREGUNTAS 1-10"></nz-step>
+  <nz-step nzTitle="PREGUNTAS 11-20"></nz-step>
+  <nz-step nzTitle="PREGUNTAS 21-30"></nz-step>
+</nz-steps>
 
-<div *ngIf="current===0">
-  <nz-form-item>
-    <nz-form-label>1.- Se le ha asignado un puesto en una gran empresa.
-      La mejor forma de establecer relaciones amistosas y cordiales con sus nuevos compañeros será:
-    </nz-form-label>
-  </nz-form-item>
+<div style="padding: 20px" *ngIf="current===0">
+
+  <nz-form-label>1.- Se le ha asignado un puesto en una gran empresa.
+    La mejor forma de establecer relaciones amistosas y cordiales con sus nuevos compañeros será:
+  </nz-form-label>
+
   <nz-radio-group [(ngModel)]="radioValue">
     <label nz-radio nzValue="A">Evitando tomar nota de los errores en que incurran.</label>
     <label nz-radio nzValue="B">Hablando bien de ellos al jefe.</label>
@@ -22,12 +26,12 @@
     <label nz-radio nzValue="D">Pidièndoles les permitan hacer los trabajos que usted puede hacer mejor.</label>
   </nz-radio-group>
 
-  <nz-form-item>
-    <nz-form-label>
-      2.- Tiene usted un empleado muy eficiente pero que constantemente se queja del trabajo, sus quejas producen mal
-      efecto en los demás empleados, lo mejor sería:
-    </nz-form-label>
-  </nz-form-item>
+
+  <nz-form-label>
+    2.- Tiene usted un empleado muy eficiente pero que constantemente se queja del trabajo, sus quejas producen mal
+    efecto en los demás empleados, lo mejor sería:
+  </nz-form-label>
+
   <nz-radio-group [(ngModel)]="radioValue">
     <label nz-radio nzValue="A">Pedir a los demás empleados que no hagan caso.</label>
     <label nz-radio nzValue="B">Averiguar la causa de esa actitud y procurar su modificación.</label>
@@ -35,12 +39,12 @@
     <label nz-radio nzValue="D">Permitirle planear lo más posible acerca de su trabajo.</label>
   </nz-radio-group>
 
-  <nz-form-item>
-    <nz-form-label>
-      3.- Un empleado de 60 años de edad que ha sido leal a la empresa durante 25 años se queja del exceso de trabajo. Lo
-      mejor sería:
-    </nz-form-label>
-  </nz-form-item>
+
+  <nz-form-label>
+    3.- Un empleado de 60 años de edad que ha sido leal a la empresa durante 25 años se queja del exceso de trabajo. Lo
+    mejor sería:
+  </nz-form-label>
+
   <nz-radio-group [(ngModel)]="radioValue">
     <label nz-radio nzValue="A">Decirle que vuelva a su trabajo so pena de cese.</label>
     <label nz-radio nzValue="B">Despedirlo, substituyèndolo por alguien más joven.</label>
@@ -48,12 +52,12 @@
     <label nz-radio nzValue="D">Aminorar su trabajo.</label>
   </nz-radio-group>
 
-  <nz-form-item>
-    <nz-form-label>
-      4.- Uno de los socios, sin autoridad sobre usted le ordena haga algo en forma bien distinta de lo que planeaba. ¿Qué
-      haría usted?
-    </nz-form-label>
-  </nz-form-item>
+
+  <nz-form-label>
+    4.- Uno de los socios, sin autoridad sobre usted le ordena haga algo en forma bien distinta de lo que planeaba. ¿Qué
+    haría usted?
+  </nz-form-label>
+
   <nz-radio-group [(ngModel)]="radioValue">
     <label nz-radio nzValue="A">Acatar la orden y no armar mayor revuelo. </label>
     <label nz-radio nzValue="B">Ignorar las indicaciones y hacerlo según había planeado.</label>
@@ -62,11 +66,11 @@
     <label nz-radio nzValue="D">Decirle que lo haga él mismo.</label>
   </nz-radio-group>
 
-  <nz-form-item>
-    <nz-form-label>
-      5.- Usted visita a un amigo íntimo que ha estado enfermo por algún tiempo. Lo mejor sería:
-    </nz-form-label>
-  </nz-form-item>
+
+  <nz-form-label>
+    5.- Usted visita a un amigo íntimo que ha estado enfermo por algún tiempo. Lo mejor sería:
+  </nz-form-label>
+
   <nz-radio-group [(ngModel)]="radioValue">
     <label nz-radio nzValue="A">Platicarle sus diversiones recientes.</label>
     <label nz-radio nzValue="B">Platicarle nuevas cosas referentes a sus amigos mutuos.</label>
@@ -74,12 +78,12 @@
     <label nz-radio nzValue="D">Enfatizar lo mucho que le apena verle enfermo.</label>
   </nz-radio-group>
 
-  <nz-form-item>
-    <nz-form-label>
-      6.- Trabaja usted en una industria y su jefe quiere que tome un curso relacionado con su carrera pero que sea
-      compatible con el horario de su trabajo. Lo mejor sería:
-    </nz-form-label>
-  </nz-form-item>
+
+  <nz-form-label>
+    6.- Trabaja usted en una industria y su jefe quiere que tome un curso relacionado con su carrera pero que sea
+    compatible con el horario de su trabajo. Lo mejor sería:
+  </nz-form-label>
+
   <nz-radio-group [(ngModel)]="radioValue">
     <label nz-radio nzValue="A">Continuar normalmente su carrera e informar al jefe sí pregunta.</label>
     <label nz-radio nzValue="B">Explicar la situación u obtener su opinión en cuanto a la importancia relativa de ambas
@@ -88,12 +92,12 @@
     <label nz-radio nzValue="D">Asistir en forma alterna y no hacer comentarios.</label>
   </nz-radio-group>
 
-  <nz-form-item>
-    <nz-form-label>
-      7.- Un agente viajero con 15 años de antigüedad decide, presionado por su familia sentar raíces. Se le cambia a las
-      oficinas generales. Es de esperar que:
-    </nz-form-label>
-  </nz-form-item>
+
+  <nz-form-label>
+    7.- Un agente viajero con 15 años de antigüedad decide, presionado por su familia sentar raíces. Se le cambia a las
+    oficinas generales. Es de esperar que:
+  </nz-form-label>
+
   <nz-radio-group [(ngModel)]="radioValue">
     <label nz-radio nzValue="A">Guste de los descansos del trabajo de oficina.</label>
     <label nz-radio nzValue="B">Se sienta inquieto por la rutina de la oficina.</label>
@@ -101,12 +105,12 @@
     <label nz-radio nzValue="D">Resulte muy ineficiente en el trabajo de oficina.</label>
   </nz-radio-group>
 
-  <nz-form-item>
-    <nz-form-label>
-      8.- Tiene dos invitados a cenar, el uno radical y el otro conservador. Surge una acalorada discusión respecto a la
-      política. Lo mejor sería:
-    </nz-form-label>
-  </nz-form-item>
+
+  <nz-form-label>
+    8.- Tiene dos invitados a cenar, el uno radical y el otro conservador. Surge una acalorada discusión respecto a la
+    política. Lo mejor sería:
+  </nz-form-label>
+
   <nz-radio-group [(ngModel)]="radioValue">
     <label nz-radio nzValue="A">Tomar partido. </label>
     <label nz-radio nzValue="B">Intentar cambiar de tema.</label>
@@ -115,11 +119,11 @@
     <label nz-radio nzValue="D">Pedir cambien de tema para evitar mayor discusión.</label>
   </nz-radio-group>
 
-  <nz-form-item>
-    <nz-form-label>
-      9.- Un joven invita a una dama al teatro, al llegar se percata de que ha olvidado la cartera. Sería mejor:
-    </nz-form-label>
-  </nz-form-item>
+
+  <nz-form-label>
+    9.- Un joven invita a una dama al teatro, al llegar se percata de que ha olvidado la cartera. Sería mejor:
+  </nz-form-label>
+
   <nz-radio-group [(ngModel)]="radioValue">
     <label nz-radio nzValue="A">Tratar de obtener boletos dejando el reloj en prenda.</label>
     <label nz-radio nzValue="B">Buscar a algún amigo a quien pedir prestado.</label>
@@ -127,12 +131,12 @@
     <label nz-radio nzValue="D">Dar una excusa plausible para ir a casa por dinero.</label>
   </nz-radio-group>
 
-  <nz-form-item>
-    <nz-form-label>
-      10.- - Usted ha tenido experiencia como vendedor y acaba de conseguir de una tienda un empleo. La mejor forma de
-      relacionarse con los empleados del departamento seria:
-    </nz-form-label>
-  </nz-form-item>
+
+  <nz-form-label>
+    10.- - Usted ha tenido experiencia como vendedor y acaba de conseguir de una tienda un empleo. La mejor forma de
+    relacionarse con los empleados del departamento seria:
+  </nz-form-label>
+
   <nz-radio-group [(ngModel)]="radioValue">
     <label nz-radio nzValue="A">Permitirle hacer la mayoría de las ventas por unos días en tanto observa sus
       métodos.</label>
@@ -144,15 +148,14 @@
 </div>
 
 
+<div style="padding: 20px" *ngIf="current===1">
 
-<div *ngIf="current===1">
 
-  <nz-form-item>
-    <nz-form-label>
-      11.- Es usted un joven empleado que va a comer con una maestra a quien conoce superficialmente. Lo mejor sería
-      iniciar la conversación acerca de:
-    </nz-form-label>
-  </nz-form-item>
+  <nz-form-label>
+    11.- Es usted un joven empleado que va a comer con una maestra a quien conoce superficialmente. Lo mejor sería
+    iniciar la conversación acerca de:
+  </nz-form-label>
+
   <nz-radio-group [(ngModel)]="radioValue">
     <label nz-radio nzValue="A">Algún tópico de actualidad.</label>
     <label nz-radio nzValue="B">Algún aspecto interesante de su propio trabajo.</label>
@@ -160,26 +163,27 @@
     <label nz-radio nzValue="D">Las sociedades de padres de familia.</label>
   </nz-radio-group>
 
-  <nz-form-item>
-    <nz-form-label>
-      12.- Una señora de especiales méritos que por largo tiempo ha dirigido trabajos
-      benéficos dejando las labores de su casa a cargo de la servidumbre, se cambia a otra
-      población. Es de esperarse que ella:
-    </nz-form-label>
-  </nz-form-item>
+
+  <nz-form-label>
+    12.- Una señora de especiales méritos que por largo tiempo ha dirigido trabajos
+    benéficos dejando las labores de su casa a cargo de la servidumbre, se cambia a otra
+    población. Es de esperarse que ella:
+  </nz-form-label>
+
   <nz-radio-group [(ngModel)]="radioValue">
     <label nz-radio nzValue="A">Se sienta insatisfecha de su nuevo hogar.</label>
     <label nz-radio nzValue="B">Se interese más por los trabajos domésticos.</label>
-    <label nz-radio nzValue="C">Intervenga poco a poco en la vida de la comunidad, continuando así sus intereses.</label>
+    <label nz-radio nzValue="C">Intervenga poco a poco en la vida de la comunidad, continuando así sus
+      intereses.</label>
     <label nz-radio nzValue="D">Adopte nuevos intereses en la nueva comunidad.</label>
   </nz-radio-group>
 
-  <nz-form-item>
-    <nz-form-label>
-      13.- Quiere pedirle un favor a un conocido con quien tiene poca confianza. La mejor
-      forma de lograrlo sería:
-    </nz-form-label>
-  </nz-form-item>
+
+  <nz-form-label>
+    13.- Quiere pedirle un favor a un conocido con quien tiene poca confianza. La mejor
+    forma de lograrlo sería:
+  </nz-form-label>
+
   <nz-radio-group [(ngModel)]="radioValue">
     <label nz-radio nzValue="A">Hacièndole creer que será él quien se beneficie más.</label>
     <label nz-radio nzValue="B">Enfatice la importancia que para usted tiene que se le conceda.</label>
@@ -187,12 +191,12 @@
     <label nz-radio nzValue="D">Decir que lo que desea en forma breve indicando los motivos.</label>
   </nz-radio-group>
 
-  <nz-form-item>
-    <nz-form-label>
-      14.- Un joven de 24 años gasta bastante tiempo y dinero en diversiones, solo ha hecho
-      ver que así no logrará al éxito en el trabajo. Probablemente cambie sus costumbres. Si:
-    </nz-form-label>
-  </nz-form-item>
+
+  <nz-form-label>
+    14.- Un joven de 24 años gasta bastante tiempo y dinero en diversiones, solo ha hecho
+    ver que así no logrará al éxito en el trabajo. Probablemente cambie sus costumbres. Si:
+  </nz-form-label>
+
   <nz-radio-group [(ngModel)]="radioValue">
     <label nz-radio nzValue="A">Sus hábitos nocturnos lesionan su salud.</label>
     <label nz-radio nzValue="B">Sus amigos enfatizan el daño que se hace a sí mismo.</label>
@@ -200,13 +204,13 @@
     <label nz-radio nzValue="D">Se interesa en el desarrollo de alguna fase de su trabajo.</label>
   </nz-radio-group>
 
-  <nz-form-item>
-    <nz-form-label>
-      15.- Tras de haber hecho un buen número de favores a un amigo, este empieza a dar por
-      hecho que usted será quien le resuelva todas sus pequeñas dificultades. La mejor
-      forma de readaptar la situación sin ofenderle sería:
-    </nz-form-label>
-  </nz-form-item>
+
+  <nz-form-label>
+    15.- Tras de haber hecho un buen número de favores a un amigo, este empieza a dar por
+    hecho que usted será quien le resuelva todas sus pequeñas dificultades. La mejor
+    forma de readaptar la situación sin ofenderle sería:
+  </nz-form-label>
+
   <nz-radio-group [(ngModel)]="radioValue">
     <label nz-radio nzValue="A">Explicar el daño que se está causando.</label>
     <label nz-radio nzValue="B">Pedir a un amigo mutuo que trate de arreglar las cosas.</label>
@@ -215,28 +219,28 @@
     <label nz-radio nzValue="D">Darle una excusa para no seguir ayudàndole.</label>
   </nz-radio-group>
 
-  <nz-form-item>
-    <nz-form-label>
-      16.- Una persona recién ascendida a un mejor puesto de autoridad lograría mejor sus
-      metas y la buena voluntad de los empleados:
-    </nz-form-label>
-  </nz-form-item>
+
+  <nz-form-label>
+    16.- Una persona recién ascendida a un mejor puesto de autoridad lograría mejor sus
+    metas y la buena voluntad de los empleados:
+  </nz-form-label>
+
   <nz-radio-group [(ngModel)]="radioValue">
     <label nz-radio nzValue="A">Tratando de que cada empleado entienda qué es la verdadera eficiencia.</label>
     <label nz-radio nzValue="B">Ascendiendo cuanto antes a quienes considere lo merezcan.</label>
     <label nz-radio nzValue="C">Preguntando confidencialmente a cada empleado en cuanto a los cambios que
       estiman necesarios.</label>
-    <label nz-radio nzValue="D">Seguir los sistemas del anterior jefe y gradualmente hacer los cambios necesarios.</label>
+    <label nz-radio nzValue="D">Seguir los sistemas del anterior jefe y gradualmente hacer los cambios
+      necesarios.</label>
   </nz-radio-group>
 
 
-  <nz-form-item>
-    <nz-form-label>
-      17.- Vive a 15 km. del centro y ha ofrecido llevar de regreso a un amigo a las 16:00
-      p.m. él lo espera desde las 15:00 y a las 16:00 horas usted se entera que no podrá salir
-      antes de las 17:30, sería mejor:
-    </nz-form-label>
-  </nz-form-item>
+  <nz-form-label>
+    17.- Vive a 15 km. del centro y ha ofrecido llevar de regreso a un amigo a las 16:00
+    p.m. él lo espera desde las 15:00 y a las 16:00 horas usted se entera que no podrá salir
+    antes de las 17:30, sería mejor:
+  </nz-form-label>
+
   <nz-radio-group [(ngModel)]="radioValue">
     <label nz-radio nzValue="A">Pedirle un taxi.</label>
     <label nz-radio nzValue="B">Explicarle y dejar que él decida.</label>
@@ -245,12 +249,11 @@
   </nz-radio-group>
 
 
-  <nz-form-item>
-    <nz-form-label>
-      18.- Es usted un ejecutivo y dos de sus empleados se llevan mal, ambos son eficientes.
-      Lo mejor sería:
-    </nz-form-label>
-  </nz-form-item>
+  <nz-form-label>
+    18.- Es usted un ejecutivo y dos de sus empleados se llevan mal, ambos son eficientes.
+    Lo mejor sería:
+  </nz-form-label>
+
   <nz-radio-group [(ngModel)]="radioValue">
     <label nz-radio nzValue="A">Despedir al menos eficiente.</label>
     <label nz-radio nzValue="B">Dar trabajo en común que a ambos interese.</label>
@@ -259,13 +262,12 @@
   </nz-radio-group>
 
 
-  <nz-form-item>
-    <nz-form-label>
-      19.- El señor González ha estado conservando su puesto subordinado por 10 años,
-      desempeña su trabajo callado y confidencialmente y se le extrañará cuando se
-      vaya. De obtener el trabajo en otra empresa, muy probablemente:
-    </nz-form-label>
-  </nz-form-item>
+  <nz-form-label>
+    19.- El señor González ha estado conservando su puesto subordinado por 10 años,
+    desempeña su trabajo callado y confidencialmente y se le extrañará cuando se
+    vaya. De obtener el trabajo en otra empresa, muy probablemente:
+  </nz-form-label>
+
   <nz-radio-group [(ngModel)]="radioValue">
     <label nz-radio nzValue="A">Asuma fácilmente responsabilidad como supervisor.</label>
     <label nz-radio nzValue="B">Haga ver de inmediato su valor.</label>
@@ -274,13 +276,12 @@
   </nz-radio-group>
 
 
-  <nz-form-item>
-    <nz-form-label>
-      20.- Va usted a ser maestro de ceremonias, en una cena el próximo sábado día en que
-      por la mañana, debido a enfermedad de su familia, se ve imposibilitado para asistir lo
-      mejor sería:
-    </nz-form-label>
-  </nz-form-item>
+  <nz-form-label>
+    20.- Va usted a ser maestro de ceremonias, en una cena el próximo sábado día en que
+    por la mañana, debido a enfermedad de su familia, se ve imposibilitado para asistir lo
+    mejor sería:
+  </nz-form-label>
+
   <nz-radio-group [(ngModel)]="radioValue">
     <label nz-radio nzValue="A">Cancelar la cena.</label>
     <label nz-radio nzValue="B">Encontrar quien lo sustituya.</label>
@@ -289,18 +290,17 @@
   </nz-radio-group>
 
 
-
 </div>
 
 
-<div *ngIf="current === 2">
+<div style="padding: 20px" *ngIf="current === 2">
 
-  <nz-form-item>
-    <nz-form-label>
-      21.- En igualdad de circunstancias el empleado que mejor se adapta a un nuevo puesto
-      es aquel que:
-    </nz-form-label>
-  </nz-form-item>
+
+  <nz-form-label>
+    21.- En igualdad de circunstancias el empleado que mejor se adapta a un nuevo puesto
+    es aquel que:
+  </nz-form-label>
+
   <nz-radio-group [(ngModel)]="radioValue">
     <label nz-radio nzValue="A">Ha sido bueno en puestos anteriores.</label>
     <label nz-radio nzValue="B">Ha tenido éxito durante 10 años en su puesto.</label>
@@ -309,12 +309,11 @@
   </nz-radio-group>
 
 
-  <nz-form-item>
-    <nz-form-label>
-      22.- Un conocido le platica acerca de una afición que él tiene, su conversación le aburre.
-      Lo mejor sería:
-    </nz-form-label>
-  </nz-form-item>
+  <nz-form-label>
+    22.- Un conocido le platica acerca de una afición que él tiene, su conversación le aburre.
+    Lo mejor sería:
+  </nz-form-label>
+
   <nz-radio-group [(ngModel)]="radioValue">
     <label nz-radio nzValue="A">Escuchar de manera cortés, pero aburrida.</label>
     <label nz-radio nzValue="B">Escuchar con fingido interés.</label>
@@ -322,12 +321,12 @@
     <label nz-radio nzValue="D">Mirar el reloj con impaciencia.</label>
   </nz-radio-group>
 
-  <nz-form-item>
-    <nz-form-label>
-      23.- Es usted un empleado ordinario en una oficina grande. El jefe entra cuando usted
-      lee en vez de trabajar. Lo mejor sería:
-    </nz-form-label>
-  </nz-form-item>
+
+  <nz-form-label>
+    23.- Es usted un empleado ordinario en una oficina grande. El jefe entra cuando usted
+    lee en vez de trabajar. Lo mejor sería:
+  </nz-form-label>
+
   <nz-radio-group [(ngModel)]="radioValue">
     <label nz-radio nzValue="A">Doblar el periódico y volver a trabajo.</label>
     <label nz-radio nzValue="B">Pretender que obtiene recortes necesarios al trabajo.</label>
@@ -335,13 +334,13 @@
     <label nz-radio nzValue="D">Seguir leyendo sin mostrar embarazo.</label>
   </nz-radio-group>
 
-  <nz-form-item>
-    <nz-form-label>
-      24.- Es usted un maestro de primaria. Camino a la escuela tras de la primera nevada,
-      algunos de sus alumnos lanzan bolas de nieve. Desde el punto de vista de la buena
-      administración de la escolar, usted debería:
-    </nz-form-label>
-  </nz-form-item>
+
+  <nz-form-label>
+    24.- Es usted un maestro de primaria. Camino a la escuela tras de la primera nevada,
+    algunos de sus alumnos lanzan bolas de nieve. Desde el punto de vista de la buena
+    administración de la escolar, usted debería:
+  </nz-form-label>
+
   <nz-radio-group [(ngModel)]="radioValue">
     <label nz-radio nzValue="A">Castigarle ahí mismo por su indisciplina.</label>
     <label nz-radio nzValue="B">Decirles que de volverlo a hacer los castigará.</label>
@@ -349,12 +348,12 @@
     <label nz-radio nzValue="D">Tomarlo como broma y no hacer caso al respecto.</label>
   </nz-radio-group>
 
-  <nz-form-item>
-    <nz-form-label>
-      25.- Preside el Comité de Mejoras Materiales en su colonia; las últimas reuniones han
-      sido de escasa asistencia. Se mejoraría la asistencia:
-    </nz-form-label>
-  </nz-form-item>
+
+  <nz-form-label>
+    25.- Preside el Comité de Mejoras Materiales en su colonia; las últimas reuniones han
+    sido de escasa asistencia. Se mejoraría la asistencia:
+  </nz-form-label>
+
   <nz-radio-group [(ngModel)]="radioValue">
     <label nz-radio nzValue="A">Visitando vecinos prominentes explicàndoles los problemas.</label>
     <label nz-radio nzValue="B">Avisar de un programa interesante para la reunión.</label>
@@ -362,12 +361,12 @@
     <label nz-radio nzValue="D">Enviar avisos personales.</label>
   </nz-radio-group>
 
-  <nz-form-item>
-    <nz-form-label>
-      26.- Zaldìvar, eficiente, pero de esos que “todo lo saben”, critica a Montoya, el jefe
-      opina que la idea de Montoya ahorra tiempo. Probablemente Zaldìvar:
-    </nz-form-label>
-  </nz-form-item>
+
+  <nz-form-label>
+    26.- Zaldìvar, eficiente, pero de esos que “todo lo saben”, critica a Montoya, el jefe
+    opina que la idea de Montoya ahorra tiempo. Probablemente Zaldìvar:
+  </nz-form-label>
+
   <nz-radio-group [(ngModel)]="radioValue">
     <label nz-radio nzValue="A">Pida otro trabajo al jefe.</label>
     <label nz-radio nzValue="B">Lo haga a su modo sin comentarios.</label>
@@ -375,12 +374,12 @@
     <label nz-radio nzValue="D">Lo haga con Montoya, pero mal a propósito.</label>
   </nz-radio-group>
 
-  <nz-form-item>
-    <nz-form-label>
-      27.- Un hombre de 64 años tuvo algún éxito cuando joven como político, sus modos
-      directos le han impedido descollar los últimos 20 años, lo más probable es que:
-    </nz-form-label>
-  </nz-form-item>
+
+  <nz-form-label>
+    27.- Un hombre de 64 años tuvo algún éxito cuando joven como político, sus modos
+    directos le han impedido descollar los últimos 20 años, lo más probable es que:
+  </nz-form-label>
+
   <nz-radio-group [(ngModel)]="radioValue">
     <label nz-radio nzValue="A">Persista en su manera de ser.</label>
     <label nz-radio nzValue="B">Cambie para lograr éxito.</label>
@@ -388,12 +387,12 @@
     <label nz-radio nzValue="D">Abandone la política por inmoral.</label>
   </nz-radio-group>
 
-  <nz-form-item>
-    <nz-form-label>
-      28.- Es usted un joven que encuentra en la calle a una mujer de más edad a quien apenas
-      conoce y que parece haber estado llorando. Lo mejor sería:
-    </nz-form-label>
-  </nz-form-item>
+
+  <nz-form-label>
+    28.- Es usted un joven que encuentra en la calle a una mujer de más edad a quien apenas
+    conoce y que parece haber estado llorando. Lo mejor sería:
+  </nz-form-label>
+
   <nz-radio-group [(ngModel)]="radioValue">
     <label nz-radio nzValue="A">Preguntarle por qué está triste.</label>
     <label nz-radio nzValue="B">Pasarle el brazo consolandolamente.</label>
@@ -401,12 +400,12 @@
     <label nz-radio nzValue="D">Simular no haberla visto.</label>
   </nz-radio-group>
 
-  <nz-form-item>
-    <nz-form-label>
-      29.- Un compañero flojea de tal manera que usted le toca más de lo que le corresponde.
-      La mejor forma de conservar las relaciones sería:
-    </nz-form-label>
-  </nz-form-item>
+
+  <nz-form-label>
+    29.- Un compañero flojea de tal manera que usted le toca más de lo que le corresponde.
+    La mejor forma de conservar las relaciones sería:
+  </nz-form-label>
+
   <nz-radio-group [(ngModel)]="radioValue">
     <label nz-radio nzValue="A">Explicar el caso al jefe cortésmente.</label>
     <label nz-radio nzValue="B">Cortésmente indicarle que debe hacer lo que le corresponde o que usted se quejara
@@ -415,12 +414,12 @@
     <label nz-radio nzValue="D">Hacer lo suyo y dejar pendiente lo que el compañero no haga.</label>
   </nz-radio-group>
 
-  <nz-form-item>
-    <nz-form-label>
-      30.- Se le ha asignado un puesto ejecutivo, en una organización. Para ganar el respeto y
-      la admiración de sus subordinados, sin perjuicio de sus planes, habría que:
-    </nz-form-label>
-  </nz-form-item>
+
+  <nz-form-label>
+    30.- Se le ha asignado un puesto ejecutivo, en una organización. Para ganar el respeto y
+    la admiración de sus subordinados, sin perjuicio de sus planes, habría que:
+  </nz-form-label>
+
   <nz-radio-group [(ngModel)]="radioValue">
     <label nz-radio nzValue="A">Ceder en todos los pequeños puntos posibles.</label>
     <label nz-radio nzValue="B">Tratar de convencerlos de todas sus ideas.</label>
