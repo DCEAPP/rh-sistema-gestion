@@ -23,6 +23,10 @@ import {NzInputNumberModule} from "ng-zorro-antd/input-number";
 import {NzCheckboxModule} from "ng-zorro-antd/checkbox";
 import {NzSelectModule} from "ng-zorro-antd/select";
 import {NzTabsModule} from "ng-zorro-antd/tabs";
+import {NzDropDownModule} from "ng-zorro-antd/dropdown";
+import {NzDescriptionsModule} from "ng-zorro-antd/descriptions";
+import {NzPopconfirmModule} from "ng-zorro-antd/popconfirm";
+import {NzTypographyModule} from "ng-zorro-antd/typography";
 
 
 
@@ -51,7 +55,11 @@ const antdModule = [
     NzInputNumberModule,
     NzCheckboxModule,
     NzSelectModule,
-    NzTabsModule
+    NzTabsModule,
+    NzDropDownModule,
+    NzDescriptionsModule,
+    NzPopconfirmModule,
+    NzTypographyModule
   ],
   exports: [],
   declarations: [

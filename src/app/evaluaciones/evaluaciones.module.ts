@@ -13,6 +13,7 @@ import {NzGridModule} from 'ng-zorro-antd/grid';
 import {OrgChartModule} from 'angular13-organization-chart';
 import {EvaluacionesRoutingModule} from "./evaluaciones-routing.module";
 import { ConsultaEvaluacionesComponent } from './consulta-evaluaciones/consulta-evaluaciones.component';
+import {NzDropDownModule} from "ng-zorro-antd/dropdown";
 
 
 /* Assign all ng-zorro modules to this array*/
@@ -21,17 +22,18 @@ const antdModule = [
 ];
 
 @NgModule({
-  imports: [
-    SharedModule,
-    EvaluacionesRoutingModule,
-    ...antdModule,
-    NzSwitchModule,
-    NzCardModule,
-    NzTableModule,
-    NzDividerModule,
-    NzGridModule,
-    OrgChartModule
-  ],
+    imports: [
+        SharedModule,
+        EvaluacionesRoutingModule,
+        ...antdModule,
+        NzSwitchModule,
+        NzCardModule,
+        NzTableModule,
+        NzDividerModule,
+        NzGridModule,
+        OrgChartModule,
+        NzDropDownModule
+    ],
   exports: [],
   declarations: [
     ConsultaEvaluacionesComponent

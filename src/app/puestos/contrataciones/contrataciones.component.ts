@@ -166,7 +166,7 @@ export class ContratacionesComponent implements OnInit {
     this.isVisible = false;
   }
 
-  showConfirm(): void {
+  showConfirm(index: number): void {
     this.confirmModal = this.modal.confirm({
       nzTitle: 'Deseas eliminar esta vacante?',
       nzContent: 'OK para confirmar',

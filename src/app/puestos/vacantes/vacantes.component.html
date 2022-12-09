@@ -1,4 +1,4 @@
-<h1>Vacantes</h1>
+<h1>VACANTES</h1>
 <br>
 <div nz-row>
   <div nz-col [nzSpan]="18" [nzPush]="6">
@@ -17,7 +17,7 @@
 
   </div>
   <div nz-col [nzSpan]="6" [nzPull]="18">
-    <button nz-button nzType="primary">AGREGAR VACANTES</button>
+    <button nz-button nzType="primary" (click)="showModal(-1,null)">AGREGAR VACANTES</button>
   </div>
 
 </div>
@@ -30,40 +30,44 @@
     <th>PERFIL DESEADO</th>
     <th>EXPERIENCIA NECESARIA</th>
     <th>SUELDO INICIAL</th>
+    <th>PRESTACIONES</th>
     <th>ACCION</th>
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let data of fixedTable.data">
-    <td>{{ data.nombre}}</td>
-    <td>{{ data.nivel}}</td>
-    <td>{{ data.perfil}}</td>
-    <td>{{ data.experiencia }}</td>
-    <td>{{ data.sueldo }}</td>
+  <tr *ngFor="let data of fixedTable.data, let i = index">
+    <td>{{ data.nombre ? data.nombre : '' }}</td>
+    <td>{{ data.nivel ? data.nivel : ''}}</td>
+    <td>{{ data.perfil ? data.perfil : ''}}</td>
+    <td>{{ data.experiencia ? data.experiencia : ''}}</td>
+    <td>{{ data.sueldo ? data.sueldo : 0 }}</td>
+    <td>{{ data.prestaciones ? data.prestaciones: '' }}</td>
     <td>
       <!--<button class="btn-edicion" nz-button nzType="primary" (click)="showModal(data)">
         <span>EDITAR</span>
       </button>-->
       <!--<button class="btn-edicion" nz-button nzType="primary" (click)="showConfirm()" nzDanger>ELIMINAR</button>-->
-      <span class="btn-delete" nz-icon nzType="delete" (click)="showConfirm()" nzTheme="outline"></span>
-      <span class="btn-edit" nz-icon nzType="edit" (click)="showModal(data)" nzTheme="outline"></span>
+      <span class="btn-delete" nz-icon nzType="delete" (click)="showConfirm(i)" nzTheme="outline"></span>
+      <span class="btn-edit" nz-icon nzType="edit" (click)="showModal(i,data)" nzTheme="outline"></span>
     </td>
   </tr>
   </tbody>
 </nz-table>
 
-<nz-modal [(nzVisible)]="isVisible" [nzWidth]="'60%'" nzTitle="EDITAR VACANTE" (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()">
+<nz-modal [(nzVisible)]="isVisible" [nzWidth]="'60%'" nzTitle="EDITAR VACANTE" (nzOnCancel)="handleCancel()"
+          (nzOnOk)="handleOk()">
   <ng-container *nzModalContent>
     <form nz-form [formGroup]="validateForm" class="ant-advanced-search-form">
       <div nz-row [nzGutter]="24">
         <div nz-col [nzSpan]="12">
           <nz-form-item>
-            <nz-form-label >Nombre</nz-form-label>
+            <nz-form-label>Nombre</nz-form-label>
             <nz-form-control>
               <input
                 nz-input
+                formControlName="nombre"
                 placeholder="Nombre"
-                value="{{currentData.nombre}}"
+                value="{{currentData ? currentData.nombre: ''}}"
               />
             </nz-form-control>
           </nz-form-item>
@@ -71,12 +75,14 @@
 
         <div nz-col [nzSpan]="12">
           <nz-form-item>
-            <nz-form-label >Perfil</nz-form-label>
+            <nz-form-label>Perfil</nz-form-label>
             <nz-form-control>
               <input
                 nz-input
+                formControlName="perfil"
+
                 placeholder="Perfil"
-                value="{{currentData.perfil}}"
+                value="{{currentData ? currentData.perfil: ''}}"
               />
             </nz-form-control>
           </nz-form-item>
@@ -86,12 +92,14 @@
       <div nz-row [nzGutter]="24">
         <div nz-col [nzSpan]="12">
           <nz-form-item>
-            <nz-form-label >Experiencia</nz-form-label>
+            <nz-form-label>Experiencia</nz-form-label>
             <nz-form-control>
               <input
                 nz-input
+                formControlName="experiencia"
+
                 placeholder="Experiencia"
-                value="{{currentData.experiencia}}"
+                value="{{currentData ? currentData.experiencia: ''}}"
               />
             </nz-form-control>
           </nz-form-item>
@@ -99,13 +107,28 @@
 
         <div nz-col [nzSpan]="12">
           <nz-form-item>
-            <nz-form-label >Sueldo</nz-form-label>
+            <nz-form-label>Sueldo</nz-form-label>
             <nz-form-control>
               <input
                 nz-input
                 type="number"
+                formControlName="sueldo"
                 placeholder="Sueldo"
-                value="{{currentData.sueldo}}"
+                value="{{currentData? currentData.sueldo:0}}"
+              />
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+        <div nz-col [nzSpan]="12">
+          <nz-form-item>
+            <nz-form-label>Prestaciones</nz-form-label>
+            <nz-form-control>
+              <input
+                nz-input
+
+                formControlName="prestaciones"
+                placeholder="Prestaciones"
+                value="{{currentData ? currentData.prestaciones:''}}"
               />
             </nz-form-control>
           </nz-form-item>
@@ -114,3 +137,4 @@
     </form>
   </ng-container>
 </nz-modal>
+
