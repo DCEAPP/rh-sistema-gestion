@@ -18,6 +18,10 @@ import { ExamenInteligenciaComponent } from './examen-inteligencia/examen-inteli
 import { ExamenPsicometricoComponent } from './examen-psicometrico/examen-psicometrico.component';
 import {NzInputModule} from 'ng-zorro-antd/input';
 import {NzDescriptionsModule} from 'ng-zorro-antd/descriptions';
+import {NzRadioModule} from "ng-zorro-antd/radio";
+import {NzPaginationModule} from "ng-zorro-antd/pagination";
+import {NzStepsModule} from "ng-zorro-antd/steps";
+import {NzSelectModule} from "ng-zorro-antd/select";
 
 /* Assign all ng-zorro modules to this array*/
 const antdModule = [
@@ -36,7 +40,11 @@ const antdModule = [
     NzGridModule,
     OrgChartModule,
     NzInputModule,
-    NzDescriptionsModule
+    NzDescriptionsModule,
+    NzRadioModule,
+    NzPaginationModule,
+    NzStepsModule,
+    NzSelectModule
   ],
   exports: [],
   declarations: [
