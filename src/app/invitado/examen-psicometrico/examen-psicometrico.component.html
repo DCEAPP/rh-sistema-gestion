@@ -1,1 +1,178 @@
-<p>examen-psicometrico works!</p>
+<h1>EXAMEN PSICOMETRICO</h1>
+<br>
+<h4>EL SIGUIENTE CUESTIONARIO ESTA DISEÑADO PARA CONOCER TUS PREFERENCIAS EN EL ESTILO DE PENDAMIENTO, APRENDIZAJE Y
+  COMUNICACION. ESTA NO ES UNA PRUEBA DE INTELIGENCIA POR LO QUE NO HAY RESPUESTAS BUENAS O MALAS, SINO QUE TODAS SON
+  IMPORTANTEMENTE BUENAS.</h4>
+<br>
+
+<nz-steps [nzCurrent]="current">
+  <nz-step nzTitle="PREGUNTAS 1-6"></nz-step>
+  <nz-step nzTitle="PREGUNTAS 7-12"></nz-step>
+  <nz-step nzTitle="PREGUNTAS 13-18"></nz-step>
+  <nz-step nzTitle="PREGUNTAS 19-24"></nz-step>
+</nz-steps>
+<br>
+<div *ngIf="current == 0" style="padding: 15px;">
+  <p>1.- Usted tiende a evitar a la gente con la que no simpatiza</p>
+  <nz-radio-group [(ngModel)]="radioValue0">
+    <label nz-radio nzValue="A">SI</label>
+    <label nz-radio nzValue="B">NO</label>
+  </nz-radio-group>
+
+  <p>2.- Usted cree firmemente en los principios de la libertad de la palabra</p>
+  <nz-radio-group [(ngModel)]="radioValue1">
+    <label nz-radio nzValue="A">SI</label>
+    <label nz-radio nzValue="B">NO</label>
+  </nz-radio-group>
+  <p>3.- Procura usted siempre ayudar a aquellos que son menos afortunados que usted</p>
+  <nz-radio-group [(ngModel)]="radioValue2">
+    <label nz-radio nzValue="A">SI</label>
+    <label nz-radio nzValue="B">NO</label>
+  </nz-radio-group>
+  <p>4.- Usted tiende a considerar antipáticas a las personas a quienes no les es usted simpático</p>
+  <nz-radio-group [(ngModel)]="radioValue3">
+    <label nz-radio nzValue="A">SI</label>
+    <label nz-radio nzValue="B">NO</label>
+  </nz-radio-group>
+  <p>5.- Todos los pueblos del mundo deberían tener derecho a la vida, a la libertad y a la construcion de su
+    felicidad</p>
+  <nz-radio-group [(ngModel)]="radioValue4">
+    <label nz-radio nzValue="A">SI</label>
+    <label nz-radio nzValue="B">NO</label>
+  </nz-radio-group>
+  <p>6.- A veces pretende usted saber más de lo que realmente sabe</p>
+  <nz-radio-group [(ngModel)]="radioValue5">
+    <label nz-radio nzValue="A">SI</label>
+    <label nz-radio nzValue="B">NO</label>
+  </nz-radio-group>
+</div>
+<div *ngIf="current == 1">
+  <p>7.- Cuando va al cine con amigos desea a veces imponerles el film que a usted le place ver, en vez del que ellos
+    hubieran preferido</p>
+  <nz-radio-group [(ngModel)]="radioValue6">
+    <label nz-radio nzValue="A">SI</label>
+    <label nz-radio nzValue="B">NO</label>
+  </nz-radio-group>
+  <p>8.- Se ha ser mas cortés con la persona amada que con los extraños</p>
+  <nz-radio-group [(ngModel)]="radioValue7">
+    <label nz-radio nzValue="A">SI</label>
+    <label nz-radio nzValue="B">NO</label>
+  </nz-radio-group>
+  <p>9.- Si, paseando con su pareja, ve usted una persona singularmente atractiva para usted, ¿debera reprimir cualquier
+    inpulso tendente a manifestar su admiración por tal criatura?</p>
+  <nz-radio-group [(ngModel)]="radioValue8">
+    <label nz-radio nzValue="A">SI</label>
+    <label nz-radio nzValue="B">NO</label>
+  </nz-radio-group>
+  <p>10.- Toda persona enamorada, antes de acudir a una cita con el/la amad@, deberá de poner especial atención en su
+    aseo
+    personal tal como se recomienda en los anuncios</p>
+  <nz-radio-group [(ngModel)]="radioValue9">
+    <label nz-radio nzValue="A">SI</label>
+    <label nz-radio nzValue="B">NO</label>
+  </nz-radio-group>
+  <p>11.- Los novios tendrían que hacer sentir a su pareja que nada hay en el mundo tan importante como el amor que los
+    une a ambos, limitando en general su conversación a asuntos personales y amorosos</p>
+  <nz-radio-group [(ngModel)]="radioValue10">
+    <label nz-radio nzValue="A">SI</label>
+    <label nz-radio nzValue="B">NO</label>
+  </nz-radio-group>
+  <p>12.- Es preferentemente moral que una joven insinúe sus sentimientos al hombre que le atrae</p>
+  <nz-radio-group [(ngModel)]="radioValue11">
+    <label nz-radio nzValue="A">SI</label>
+    <label nz-radio nzValue="B">NO</label>
+  </nz-radio-group>
+</div>
+
+<div *ngIf="current == 2">
+  <p>13.- Una persona que sabe dominarse y es capaz de mantener una actitud calculadora y fría frente al sexo opuesto,
+    tiene una indudable ventaja sobre las personas más emotivas</p>
+  <nz-radio-group [(ngModel)]="radioValue12">
+    <label nz-radio nzValue="A">SI</label>
+    <label nz-radio nzValue="B">NO</label>
+  </nz-radio-group>
+  <p>14.- Una persona que ama a otra debería atreverse a decírselo francamente, sin andar con insinuaciones, indirectas,
+    miradas, suspiros, etc</p>
+  <nz-radio-group [(ngModel)]="radioValue13">
+    <label nz-radio nzValue="A">SI</label>
+    <label nz-radio nzValue="B">NO</label>
+  </nz-radio-group>
+  <p>15.- Para inspirar un amor sincero es quizá preferible que uno sea natural y hasta ingenuo. Pero para hacer que
+    este
+    amor perdure a través de los años, ¿convendrá abandonar la sencillez y cultivar en lo
+    posible la técnica amatoria?</p>
+  <nz-radio-group [(ngModel)]="radioValue14">
+    <label nz-radio nzValue="A">SI</label>
+    <label nz-radio nzValue="B">NO</label>
+  </nz-radio-group>
+  <p>16.- El amor romántico tan alabado por los poetas, es la clase de amor a propósito para soñadores y gente poco
+    practica, pero es impropio de gente normal</p>
+  <nz-radio-group [(ngModel)]="radioValue15">
+    <label nz-radio nzValue="A">SI</label>
+    <label nz-radio nzValue="B">NO</label>
+  </nz-radio-group>
+  <p>17.- Uno debe tener presente que no pasa un minuto sin que esté bajo la observación de los que nos rodean</p>
+  <nz-radio-group [(ngModel)]="radioValue16">
+    <label nz-radio nzValue="A">SI</label>
+    <label nz-radio nzValue="B">NO</label>
+  </nz-radio-group>
+  <p>18.- Lo más prudente y juicioso es conservar la dignidad, aunque que este fuertemente tentado a obrar de otra
+    forma</p>
+  <nz-radio-group [(ngModel)]="radioValue17">
+    <label nz-radio nzValue="A">SI</label>
+    <label nz-radio nzValue="B">NO</label>
+  </nz-radio-group>
+</div>
+
+<div *ngIf="current == 3">
+  <p>19.- Al encontrarse con personas extrañas debe uno procurar mostrarse agradable y ocurrente hasta el punto de
+    impresionarles</p>
+  <nz-radio-group [(ngModel)]="radioValue18">
+    <label nz-radio nzValue="A">SI</label>
+    <label nz-radio nzValue="B">NO</label>
+  </nz-radio-group>
+  <p>20.- Debe hacerse uno respetar, sin tolerar jamás que le hagan objeto de una broma</p>
+  <nz-radio-group [(ngModel)]="radioValue19">
+    <label nz-radio nzValue="A">SI</label>
+    <label nz-radio nzValue="B">NO</label>
+  </nz-radio-group>
+  <p>21.- Debe uno ayudar a sus amigos, por si algún día necesita uno de la ayuda de ellos</p>
+  <nz-radio-group [(ngModel)]="radioValue20">
+    <label nz-radio nzValue="A">SI</label>
+    <label nz-radio nzValue="B">NO</label>
+  </nz-radio-group>
+  <p>22.- No vale la pena hacer demasiados favores, ya que, en fin de cuentas, es muy poca la gente que sabe realmente
+    agradecer</p>
+  <nz-radio-group [(ngModel)]="radioValue21">
+    <label nz-radio nzValue="A">SI</label>
+    <label nz-radio nzValue="B">NO</label>
+  </nz-radio-group>
+  <p>23.- Es mejor que los demás dependan de uno, que tener que depender de los demás</p>
+  <nz-radio-group [(ngModel)]="radioValue22">
+    <label nz-radio nzValue="A">SI</label>
+    <label nz-radio nzValue="B">NO</label>
+  </nz-radio-group>
+  <p>24.- Un verdadero amigo apremia a los que están cerca de su corazón para que hagan lo que más le conviene, aun
+    cuando
+    ellos no deseen hacerlo</p>
+  <nz-radio-group [(ngModel)]="radioValue23">
+    <label nz-radio nzValue="A">SI</label>
+    <label nz-radio nzValue="B">NO</label>
+  </nz-radio-group>
+
+</div>
+
+
+<div class="steps-action">
+  <button nz-button nzType="default" (click)="pre()" *ngIf="current > 0">
+    <span>ANTERIOR</span>
+  </button>
+  <button nz-button nzType="default" (click)="next()" *ngIf="current < 3">
+    <span>SIGUIENTE</span>
+  </button>
+  <button nz-button nzType="primary" (click)="done()" [nzLoading]="isLoadingOne" style="" *ngIf="current === 3">
+    FINALIZAR
+  </button>
+</div>
+
+

@@ -18,6 +18,8 @@ import { ExamenInteligenciaComponent } from './examen-inteligencia/examen-inteli
 import { ExamenPsicometricoComponent } from './examen-psicometrico/examen-psicometrico.component';
 import {NzInputModule} from 'ng-zorro-antd/input';
 import {NzDescriptionsModule} from 'ng-zorro-antd/descriptions';
+import {NzRadioModule} from "ng-zorro-antd/radio";
+import {NzStepsModule} from "ng-zorro-antd/steps";
 
 /* Assign all ng-zorro modules to this array*/
 const antdModule = [
@@ -25,19 +27,21 @@ const antdModule = [
 ];
 
 @NgModule({
-  imports: [
-    SharedModule,
-    InvitadosRoutingModule,
-    ...antdModule,
-    NzSwitchModule,
-    NzCardModule,
-    NzTableModule,
-    NzDividerModule,
-    NzGridModule,
-    OrgChartModule,
-    NzInputModule,
-    NzDescriptionsModule
-  ],
+    imports: [
+        SharedModule,
+        InvitadosRoutingModule,
+        ...antdModule,
+        NzSwitchModule,
+        NzCardModule,
+        NzTableModule,
+        NzDividerModule,
+        NzGridModule,
+        OrgChartModule,
+        NzInputModule,
+        NzDescriptionsModule,
+        NzRadioModule,
+        NzStepsModule
+    ],
   exports: [],
   declarations: [
     VacantesComponent,
