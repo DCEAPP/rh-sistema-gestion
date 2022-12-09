@@ -1,6 +1,6 @@
-<form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
 
-  <nz-upload
+  <div style="margin-left: 500px" class="center">
+    <nz-upload
     class="avatar-uploader"
     nzAction="https://www.mocky.io/v2/5cc8019d300000980a055e76"
     nzName="avatar"
@@ -15,7 +15,9 @@
     </ng-container>
     <img *ngIf="avatarUrl" [src]="avatarUrl" style="width: 100%" />
   </nz-upload>
-  <br>
+
+  </div>
+  <div style="margin-left: 465px" class="center">
   <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Selecciona tu puesto" [(ngModel)]="selectedValue">
     <nz-option nzLabel="Chef" nzValue="Chef"></nz-option>
     <nz-option nzLabel="Mucama" nzValue="Mucama"></nz-option>
@@ -23,8 +25,8 @@
     <nz-option nzLabel="Entrenador" nzValue="Entrenador"></nz-option>
     <nz-option nzLabel="Magista" nzValue="Masagista"></nz-option>
   </nz-select>
-  <br>
 
+  </div>
   <nz-collapse nzAccordion>
     <nz-collapse-panel [nzHeader]="'INFORMACIÓN ACADEMICA'" [nzActive]="true">
       <p><strong>Añade tu experiencia laboral</strong></p>
@@ -201,4 +203,3 @@
 
   </nz-collapse>
 
-</form>

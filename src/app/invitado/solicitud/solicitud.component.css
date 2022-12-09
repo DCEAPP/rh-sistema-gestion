@@ -102,3 +102,8 @@ nz-collapse-panel{
   border-style: dashed;
 }
 
+.center {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+}
