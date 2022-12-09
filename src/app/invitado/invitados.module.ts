@@ -51,6 +51,7 @@ const antdModule = [
     OrgChartModule,
     NzInputModule,
     NzDescriptionsModule,
+
     NzUploadModule,
     NzDividerModule,
     NzTableModule,

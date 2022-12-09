@@ -1,1 +1,40 @@
-<p>consulta-evaluaciones works!</p>
+<nz-table #nzTable [nzData]="listOfDisplayData" nzTableLayout="fixed">
+  <thead>
+  <tr>
+    <th nzCustomFilter>
+      NOMBRE
+      <nz-filter-trigger [(nzVisible)]="visible" [nzActive]="searchValue.length > 0" [nzDropdownMenu]="menu">
+        <span nz-icon nzType="search"></span>
+      </nz-filter-trigger>
+    </th>
+    <th>PUESTO SOLICITADO</th>
+    <th>PSICOMETRICO</th>
+    <th>CONOCIMIENTO</th>
+    <th>INTELIGENCIA</th>
+    <th>ESTATUS</th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let data of nzTable.data;let i=index">
+    <td>{{ data.nombre }}</td>
+    <td>{{ data.puestoSolicitado }}</td>
+    <td>{{ data.calificacionPsico}}</td>
+    <td>{{ data.calificacionCono}}</td>
+    <td>{{ data.calificacionInte}}</td>
+    <td>{{ data.estatus}}</td>
+    <button  nz-button nzType="primary" (click)="contratar(i,data.estatus)" style="margin: 10px; width: 150px" center>CONTRATAR</button>
+    <button nz-button nzType="default" nzDanger (click) = "rechazar(i,data.estatus)" style="margin: 10px; width: 150px" center>RECHAZAR</button>
+
+  </tr>
+  </tbody>
+</nz-table>
+<nz-dropdown-menu #menu="nzDropdownMenu">
+  <div class="ant-table-filter-dropdown">
+    <div class="search-box">
+      <input type="text" nz-input placeholder="BUSCAR NOMBRE" [(ngModel)]="searchValue" />
+      <button  nz-button nzSize="small" nzType="primary" (click)="search()" class="search-button">BUSCAR</button>
+      <button nz-button nzSize="small" (click)="reset()">REINICIAR</button>
+    </div>
+  </div>
+</nz-dropdown-menu>
