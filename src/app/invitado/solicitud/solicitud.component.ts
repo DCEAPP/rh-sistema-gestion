@@ -14,6 +14,7 @@ export class SolicitudComponent implements OnInit {
 
   constructor(private fb: FormBuilder, private msg: NzMessageService) {
   }
+
   validateForm!: FormGroup;
   selectedValue = null;
   inputValue?: string;
@@ -149,7 +150,7 @@ export class SolicitudComponent implements OnInit {
   listOfControl: Array<{ id: number; controlInstance: string }> = [];
 
   loading = false;
-  avatarUrl?: string;
+  avatarUrl = 'https://scontent.fmex28-1.fna.fbcdn.net/v/t39.30808-1/278281590_5606239569405958_487359441270392425_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=dbb9e7&_nc_ohc=ZpDPNoOJMi4AX9PUQyS&_nc_ht=scontent.fmex28-1.fna&oh=00_AfB2FnQj1GkSbwNKJ7y2jRaKpOxouBXQQcB4HCQHBglirQ&oe=6397AAE2';
 
   addField(e?: MouseEvent): void {
     if (e) {
