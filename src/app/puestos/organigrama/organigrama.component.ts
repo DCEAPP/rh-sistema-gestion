@@ -37,8 +37,7 @@ export class OrganigramaComponent implements OnInit {
         name: 'ASISTENTE ADMINISTRATIVO',
         description: 'KEVIN DAVID MOLINA GOMEZ',
         image: 'assets/personas/kevin.jpeg',
-        children: [
-        ]
+        children: []
       },
       {
         name: 'GERENTE DE HABITACIONES',
@@ -224,8 +223,12 @@ export class OrganigramaComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  selectedNode: any;
+
   showModal(node: any): void {
     this.isVisible = true;
+    this.selectedNode = node;
   }
 
   handleOk(): void {
