@@ -1,1 +1,142 @@
-<p>consulta-solicitudes works!</p>
+<nz-table #nzTable [nzData]="listOfDisplayData" nzTableLayout="fixed">
+  <thead>
+  <tr>
+    <th>NOMBRE</th>
+    <th>FECHA DE NACIMIENTO</th>
+    <th>NIVEL DE ESTUDIOS</th>
+    <th>CURSANDO ACTUALMENTE</th>
+    <th></th>
+
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let data of nzTable.data; let i = index">
+    <td>{{ data.nombre }}</td>
+    <td>{{ data.fecha }}</td>
+    <td>{{ data.nivelEstudios }}</td>
+    <td>{{ data.cursando }}</td>
+
+    <td>
+      <!--<button class="btn-edicion" nz-button nzType="primary" (click)="showModal(data)">
+   <span>EDITAR</span>
+ </button>-->
+      <!--<button class="btn-edicion" nz-button nzType="primary" (click)="showConfirm()" nzDanger>ELIMINAR</button>-->
+      <button (click)="showModal(i,data)" nz-button nzType="primary">MAS INFORMACION</button>
+    </td>
+  </tr>
+  </tbody>
+</nz-table>
+
+
+<nz-modal [(nzVisible)]="isVisible" [nzWidth]="'90%'" nzTitle="INFORMACION DE SOLICITUDES"
+          (nzOnOk)="handleOk()">
+  <ng-container *nzModalContent>
+    <nz-tabset>
+
+      <nz-tab nzTitle="INFORMACION ACADEMICA">
+        <div style="background: #ECECEC;padding:30px;">
+          <div nz-row [nzGutter]="8">
+            <div nz-col [nzSpan]="8">
+              <nz-card nzTitle="CENTRO EDUCATIVO">
+                <p>
+                  {{this.currentSolicitud.centroEduc}}
+                </p>
+              </nz-card>
+            </div>
+            <div nz-col [nzSpan]="8">
+              <nz-card nzTitle="AREA PROFECIONAL">
+                <p>
+                  {{this.currentSolicitud.areaProfesional}}
+                </p>
+              </nz-card>
+            </div>
+            <div nz-col [nzSpan]="8">
+              <nz-card nzTitle="NIVEL DE ESTUDIOS">
+                <p>
+                  {{this.currentSolicitud.nivelEstudios}}
+                </p>
+              </nz-card>
+            </div>
+
+
+            <div nz-col [nzSpan]="8">
+              <nz-card nzTitle="CURSANDO ACTUALMENTE">
+                <p>
+                  {{this.currentSolicitud.cursando}}
+                </p>
+              </nz-card>
+            </div>
+
+          </div>
+
+        </div>
+      </nz-tab>
+
+
+      <nz-tab nzTitle="EXPERIENCIA LABORAL">
+        <div style="background: #ECECEC;padding:30px;">
+          <div nz-row [nzGutter]="8">
+            <div nz-col [nzSpan]="8">
+              <nz-card nzTitle="NOMBRE DE LA EMPRESA">
+                <p>
+                  {{this.currentSolicitud.nombreEmpresa}}
+                </p>
+              </nz-card>
+            </div>
+            <div nz-col [nzSpan]="8">
+              <nz-card nzTitle="GIRO DE LA EMPRESA">
+                <p>
+                  {{this.currentSolicitud.giroEmpresa}}
+                </p>
+              </nz-card>
+            </div>
+            <div nz-col [nzSpan]="8">
+              <nz-card nzTitle="CARGO">
+                <p>
+                  {{this.currentSolicitud.cargo}}
+                </p>
+              </nz-card>
+            </div>
+          </div>
+          <div nz-col [nzSpan]="8">
+            <nz-card nzTitle="¿SIGO TRABAJANDO AQUI?">
+              <p>
+                {{this.currentSolicitud.cursando}}
+
+              </p>
+            </nz-card>
+          </div>
+        </div>
+      </nz-tab>
+
+      <nz-tab nzTitle="CONOCIMIENTOS Y HABILIDADES">
+        <div style="background: #ECECEC;padding:30px;">
+          <div nz-row [nzGutter]="8">
+            <div nz-col [nzSpan]="8">
+              <nz-card nzTitle="HABILIDADES">
+                <p>
+                  {{this.currentSolicitud.habilidades}}
+                </p>
+              </nz-card>
+            </div>
+
+
+          </div>
+          <div nz-col [nzSpan]="8">
+            <nz-card nzTitle="DEPARTAMENTO">
+              <p>
+                {{this.currentSolicitud.departamento}}
+
+              </p>
+            </nz-card>
+          </div>
+        </div>
+      </nz-tab>
+
+    </nz-tabset>
+  </ng-container>
+</nz-modal>
+
+
+
+
