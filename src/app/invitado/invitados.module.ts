@@ -31,6 +31,7 @@ import {NzFormModule} from 'ng-zorro-antd/form';
 import {NzSelectModule} from 'ng-zorro-antd/select';
 import {NzTreeSelectModule} from 'ng-zorro-antd/tree-select';
 import {NzRadioModule} from 'ng-zorro-antd/radio';
+import {NzStepsModule} from "ng-zorro-antd/steps";
 
 /* Assign all ng-zorro modules to this array*/
 const antdModule = [
@@ -66,7 +67,8 @@ const antdModule = [
     NzTreeSelectModule,
     NzUploadModule,
     NzMessageModule,
-    NzRadioModule
+    NzRadioModule,
+    NzStepsModule
   ],
   exports: [],
   declarations: [
