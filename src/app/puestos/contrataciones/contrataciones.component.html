@@ -1,7 +1,7 @@
 <h1>Contrataciones</h1>
 <br>
 <div nz-row>
-  <div nz-col [nzSpan]="18" [nzPush]="6">
+  <div nz-col [nzSpan]="18" [nzPush]="0">
     <nz-input-group nzSearch [nzAddOnAfter]="suffixIconButton">
       <input
         type="text"
@@ -32,21 +32,21 @@
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let data of fixedTable.data">
-    <td>{{ data.idPuesto }}</td>
-    <td>{{ data.nombre }}</td>
-    <td>{{ data.fechaInicio }}</td>
-    <td>{{ data.fechaTerminoContrato }}</td>
-    <td>{{ data.idSolicitud }}</td>
-    <td>{{ data.sueldoInicial }}</td>
+  <tr *ngFor="let data of fixedTable.data, let i = index">
+    <td>{{ data.idPuesto ? data.idPuesto : '' }}</td>
+    <td>{{ data.nombre ? data.nombre : '' }}</td>
+    <td>{{ data.fechaInicio ? data.fechaInicio : '' }}</td>
+    <td>{{ data.fechaTerminoContrato ? data.fechaTerminoContrato : '' }}</td>
+    <td>{{ data.idSolicitud ? data.idSolicitud : '' }}</td>
+    <td>{{ data.sueldoInicial ? data.sueldoInicial : '' }}</td>
     <td>
       <!--<button class="btn-edicion" nz-button nzType="primary" (click)="showModal(data)">
         <span>EDITAR</span>
       </button>-->
       <!--<button class="btn-edicion" nz-button nzType="primary" (click)="showConfirm()" nzDanger>ELIMINAR</button>-->
-      <span class="btn-delete" nz-icon nzType="delete" (click)="showConfirm()" nzTheme="outline"></span>
-      <span class="btn-edit" nz-icon nzType="edit" (click)="showModal(data)" nzTheme="outline"></span>
-      <span class="btn-print" nz-icon nzType="printer" nzTheme="outline"></span>
+      <span class="btn-delete" nz-icon nzType="delete" (click)="showConfirm(i)" nzTheme="outline"></span>
+      <span class="btn-edit" nz-icon nzType="edit" (click)="showModal(i,data)" nzTheme="outline"></span>
+      <a href="https://drive.google.com/drive/u/0/folders/1WqIxdZCqNF1ZvRzDf9ZZI1SkIBDR72Ul"> <span class="btn-print" nz-icon nzType="printer" nzTheme="outline"></span></a>
     </td>
   </tr>
   </tbody>
@@ -63,7 +63,7 @@
               <input
                 nz-input
                 placeholder="Nombre"
-                value="{{currentData.nombre}}"
+                value="{{currentData ? currentData.nombre: ''}}"
               />
             </nz-form-control>
           </nz-form-item>
@@ -76,7 +76,7 @@
               <input
                 nz-input
                 placeholder="Puesto"
-                value="{{currentData.idPuesto}}"
+                value="{{currentData ? currentData.idPuesto: ''}}"
               />
             </nz-form-control>
           </nz-form-item>
@@ -91,7 +91,7 @@
               <input
                 nz-input
                 placeholder="Fecha de inicio"
-                value="{{currentData.fechaInicio}}"
+                value="{{currentData ? currentData.fechaInicio: ''}}"
               />
             </nz-form-control>
           </nz-form-item>
@@ -103,8 +103,8 @@
             <nz-form-control>
               <input
                 nz-input
-                placeholder=""
-                value="{{currentData.fechaTerminoContrato}}"
+                placeholder="Fecha del termino del contrato"
+                value="{{currentData ? currentData.fechaTerminoContrato: ''}}"
               />
             </nz-form-control>
           </nz-form-item>
@@ -118,7 +118,7 @@
               <input
                 nz-input
                 placeholder="Solicitud"
-                value="{{currentData.idSolicitud}}"
+                value="{{currentData ? currentData.idSolicitud: ''}}"
               />
             </nz-form-control>
           </nz-form-item>
@@ -132,7 +132,7 @@
                 nz-input
                 type="number"
                 placeholder="Sueldo"
-                value="{{currentData.sueldoInicial}}"
+                value="{{currentData ? currentData.sueldoInicial: ''}}"
               />
             </nz-form-control>
           </nz-form-item>

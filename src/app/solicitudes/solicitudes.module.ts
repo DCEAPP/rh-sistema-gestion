@@ -13,6 +13,8 @@ import {NzGridModule} from 'ng-zorro-antd/grid';
 import {OrgChartModule} from 'angular13-organization-chart';
 import {SolicitudesRoutingModule} from './solicitudes-routing.module';
 import {ConsultaSolicitudesComponent} from './consulta-solicitudes/consulta-solicitudes.component';
+import {NzModalModule} from "ng-zorro-antd/modal";
+import {NzTabsModule} from "ng-zorro-antd/tabs";
 
 
 /* Assign all ng-zorro modules to this array*/
@@ -30,7 +32,9 @@ const antdModule = [
     NzTableModule,
     NzDividerModule,
     NzGridModule,
-    OrgChartModule
+    OrgChartModule,
+    NzModalModule,
+    NzTabsModule
   ],
   exports: [],
   declarations: [

@@ -94,49 +94,86 @@ export class ContratacionesComponent implements OnInit {
     }
   ];
   listOfDisplayData = [...this.listOfData];
-  constructor(private fb: FormBuilder,private modal: NzModalService) { }
+  constructor(private fb: FormBuilder, private modal: NzModalService) { }
 
 
   ngOnInit(): void {
-    this.validateForm = this.fb.group({});
+    this.validateForm = this.fb.group({
+      nombre: '',
+      fechaInicio: '',
+      fechaTerminoContrato: '',
+      idEvaluación: '',
+      idPuesto: '',
+      idSolicitud: '',
+      idUsuario: '',
+      sueldoInicial: ''
+    });
     for (let i = 0; i < 10; i++) {
       this.controlArray.push({ index: i, show: i < 6 });
       this.validateForm.addControl(`field${i}`, new FormControl());
     }
 
   }
+  editar(): void {
+    console.log('list of data' + this.currentData.nombre);
+    console.log(this.index2);
+    this.listOfDisplayData[this.index2].nombre = this.validateForm.get('nombre').value;
+    this.listOfDisplayData[this.index2].idPuesto = this.validateForm.get('puesto').value;
+    this.listOfDisplayData[this.index2].fechaInicio = this.validateForm.get('Fecha de inicio').value;
+    this.listOfDisplayData[this.index2].fechaTerminoContrato = this.validateForm.get('Fecha del termino del contrato').value;
+    this.listOfDisplayData[this.index2].idSolicitud = this.validateForm.get('Solicitud ').value;
+    this.listOfDisplayData[this.index2].sueldoInicial = this.validateForm.get('Sueldo ').value;
+    this.resetForm();
+
+    this.isVisible = false;
+    this.isOkLoading = false;
+  }
+  borrar(index: number) {
+    this.listOfDisplayData = this.listOfDisplayData.filter(item => item !== this.listOfDisplayData[index]);
+  }
   isVisible = false;
   isOkLoading = false;
 
-  puesto=""
+
 
   currentData: any;
+  index2: number;
 
-  showModal(data: any): void {
-    this.currentData = data;
-    this.puesto = data.sueldo;
+
+  showModal(index: number, data: any): void {
+    if (data) {
+      console.log('BORRAR' + data);
+      this.currentData = data;
+      this.index2 = index;
+      this.validateForm = this.fb.group({
+        nombre: [this.currentData.nombre, ''],
+        idPuesto: [this.currentData.idPuesto, ''],
+        fechaInicio: [this.currentData.fechaInicio, ''],
+        fechaTerminoContrato: [this.currentData.fechaTerminoContrato, ''],
+        idSolicitud: [this.currentData.idSolicitud, ''],
+        sueldoInicial: [this.currentData.sueldoInicial, ''],
+      });
+    }
     this.isVisible = true;
   }
 
   handleOk(): void {
     this.isOkLoading = true;
-    setTimeout(() => {
-      this.isVisible = false;
-      this.isOkLoading = false;
-    }, 3000);
+    this.editar();
   }
 
   handleCancel(): void {
     this.isVisible = false;
   }
 
-  showConfirm(): void {
+  showConfirm(index: number): void {
     this.confirmModal = this.modal.confirm({
       nzTitle: 'Deseas eliminar esta vacante?',
       nzContent: 'OK para confirmar',
       nzOnOk: () =>
         new Promise((resolve, reject) => {
           setTimeout(Math.random() > 0.5 ? resolve : reject, 1000);
+          this.borrar(index);
         }).catch(() => console.log('Oops errors!'))
     });
   }
@@ -187,3 +224,4 @@ interface Person {
   sueldoInicial: string;
   nombre: string;
 }
+

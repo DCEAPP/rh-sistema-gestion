@@ -19,7 +19,13 @@ import { ExamenPsicometricoComponent } from './examen-psicometrico/examen-psicom
 import {NzInputModule} from 'ng-zorro-antd/input';
 import {NzDescriptionsModule} from 'ng-zorro-antd/descriptions';
 import {NzRadioModule} from "ng-zorro-antd/radio";
+<<<<<<< HEAD
 import {NzStepsModule} from "ng-zorro-antd/steps";
+=======
+import {NzPaginationModule} from "ng-zorro-antd/pagination";
+import {NzStepsModule} from "ng-zorro-antd/steps";
+import {NzSelectModule} from "ng-zorro-antd/select";
+>>>>>>> developer-8-dic
 
 /* Assign all ng-zorro modules to this array*/
 const antdModule = [
@@ -27,6 +33,7 @@ const antdModule = [
 ];
 
 @NgModule({
+<<<<<<< HEAD
     imports: [
         SharedModule,
         InvitadosRoutingModule,
@@ -42,6 +49,25 @@ const antdModule = [
         NzRadioModule,
         NzStepsModule
     ],
+=======
+  imports: [
+    SharedModule,
+    InvitadosRoutingModule,
+    ...antdModule,
+    NzSwitchModule,
+    NzCardModule,
+    NzTableModule,
+    NzDividerModule,
+    NzGridModule,
+    OrgChartModule,
+    NzInputModule,
+    NzDescriptionsModule,
+    NzRadioModule,
+    NzPaginationModule,
+    NzStepsModule,
+    NzSelectModule
+  ],
+>>>>>>> developer-8-dic
   exports: [],
   declarations: [
     VacantesComponent,

@@ -1,1 +1,193 @@
-<p>registro-proyecto works!</p>
+
+<p>NOMBRE DEL PROYECTO:</p>
+
+
+
+<nz-form-item>
+  <nz-form-control nzErrorTip="INTRODUCE EL NOMBRE!">
+    <nz-input-group nzPrefixIcon="file">
+      <input type="text" nz-input formControlName="ProyectName"/>
+    </nz-input-group>
+  </nz-form-control>
+</nz-form-item>
+
+<nz-form-label>
+  Habilidades Requeridas
+</nz-form-label>
+<nz-checkbox-wrapper style="width: 100%;" (nzOnChange)="log($event)">
+  <div nz-row>
+    <div nz-col nzSpan="8"><label nz-checkbox nzValue="A" [ngModel]="true">Logica</label></div>
+    <div nz-col nzSpan="8"><label nz-checkbox nzValue="B">Gestion de Proyectos</label></div>
+    <div nz-col nzSpan="8"><label nz-checkbox nzValue="C">Comunicacion</label></div>
+    <div nz-col nzSpan="8"><label nz-checkbox nzValue="D">Destreza</label></div>
+    <div nz-col nzSpan="8"><label nz-checkbox nzValue="E">Gestion de Equipos</label></div>
+    <div nz-col nzSpan="8"><label nz-checkbox nzValue="F">Manejo de software</label></div>
+    <div nz-col nzSpan="8"><label nz-checkbox nzValue="G">Resolucion de conflictos</label></div>
+    <div nz-col nzSpan="8"><label nz-checkbox nzValue="H">Liderazgo</label></div>
+    <div nz-col nzSpan="8"><label nz-checkbox nzValue="I">Inteligencia emocional y social</label></div>
+  </div>
+</nz-checkbox-wrapper>
+
+<nz-form-item></nz-form-item>
+
+<div nz-row>
+  <div nz-col nzSpan="12">
+
+    <nz-form-item>
+
+      <nz-form-label>PRESUPUESTO<br></nz-form-label>
+      <br>
+      <nz-input-number
+        [(ngModel)]="demoValue"
+        [nzMin]="1"
+        [nzMax]="100000000000000000"
+        [nzStep]="1"
+        [nzFormatter]="formatterDollar"
+        [nzParser]="parserDollar"
+      ></nz-input-number>
+
+    </nz-form-item>
+
+
+    <nz-form-item>
+      <nz-form-label>
+        Fecha de Inicio - Fecha de Finalizacion
+      </nz-form-label>
+      <br>
+      <nz-range-picker
+        [nzShowTime]="{ nzFormat: 'HH:mm' }"
+        nzFormat="yyyy-MM-dd HH:mm"
+        ngModel
+        (ngModelChange)="onChange($event)"
+        (nzOnCalendarChange)="onCalendarChange($event)"
+        (nzOnOk)="onOk($event)"
+      ></nz-range-picker>
+    </nz-form-item>
+
+
+  </div>
+
+
+  <div nz-col nzSpan="12">
+    <form nz-form [formGroup]="validateForm" class="login-form" (ngSubmit)="submitForm()">
+
+      <nz-form-item>
+
+        <nz-form-label>DESCRIPCION DEL EVENTO</nz-form-label>
+        <br>
+        <br>
+        <nz-mention [nzSuggestions]="suggestions">
+          <textarea nz-input [nzAutosize]="{ minRows: 6, maxRows: 6 }" [(ngModel)]="inputValue"
+                    nzMentionTrigger></textarea>
+        </nz-mention>
+
+      </nz-form-item>
+
+    </form>
+  </div>
+</div>
+
+
+
+<form nz-form [formGroup]="validateForm">
+  <nz-form-label >
+    INTEGRANTES DEL PROYECTO
+  </nz-form-label>
+  <nz-form-item *ngFor="let control of listOfControl; let i = index">
+    <nz-form-label  [nzXs]="30" [nzSm]="3.5" *ngIf="i==0" [nzFor]="control.controlInstance">
+      LIDER DE PROYECTO
+    </nz-form-label>
+    <nz-form-control
+      [nzXs]="24"
+      [nzSm]="20"
+      [nzOffset]="i === 0 ? 0 : 4"
+      nzErrorTip="Por favor introduzca algún nombre."
+    >
+
+
+      <nz-select
+        nzMode="multiple"
+        nzPlaceHolder="SELECCIONAR INTEGRANTES"
+
+        nzShowSearch
+        nzServerSearch
+        style="width: 70%"
+        [(ngModel)]="selectedUser"
+        (nzOnSearch)="onSearch($event)"
+      >
+
+        <ng-container  *ngFor="let o of optionList">
+          <nz-option  [nzValue]="o" [nzLabel]="o"></nz-option>
+        </ng-container>
+
+      </nz-select>
+
+
+
+
+      <span
+        nz-icon
+        style="padding: 5px"
+        nzType="minus-circle-o"
+        class="dynamic-delete-button"
+        (click)="removeField(control, $event)"
+      ></span>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-control [nzXs]="{ span: 20, offset: 0 }" [nzSm]="{ span: 20, offset: 4 }">
+      <button nz-button nzType="dashed" class="add-button" (click)="addField($event)">
+        <span nz-icon nzType="plus"></span>
+        AGREGAR
+      </button>
+    </nz-form-control>
+  </nz-form-item>
+
+  <div nz-row class="login-form-margin">
+    <div nz-col [nzSpan]="12">
+    </div>
+  </div>
+</form>
+
+
+<nz-tabset>
+  <nz-tab nzTitle="UBICACION" aria-placeholder="LUGAR(ES) DEL PROYECTO">
+    <nz-mention [nzSuggestions]="suggestions">
+
+          <textarea
+            nz-input
+            [nzAutosize]="{ minRows: 4, maxRows: 4 }"
+            [(ngModel)]="inputValue"
+            (ngModelChange)="renderPreView()"
+            nzMentionTrigger
+            placeholder="LUGAR(ES) DEL PROYECTO"
+          ></textarea>
+    </nz-mention>
+  </nz-tab>
+
+</nz-tabset>
+
+
+<button nz-button nzType="primary">
+  CREAR PROYECTO
+  <span nz-icon></span>
+</button>
+
+
+<nz-select
+  nzMode="multiple"
+  nzPlaceHolder="Select users"
+  nzAllowClear
+  nzShowSearch
+  nzServerSearch
+  [(ngModel)]="selectedUser"
+  (nzOnSearch)="onSearch($event)"
+>
+  <ng-container *ngFor="let o of optionList">
+    <nz-option *ngIf="!isLoading" [nzValue]="o" [nzLabel]="o"></nz-option>
+  </ng-container>
+  <nz-option *ngIf="isLoading" nzDisabled nzCustomContent>
+    <span nz-icon nzType="loading" class="loading-icon"></span>
+    Loading Data...
+  </nz-option>
+</nz-select>
