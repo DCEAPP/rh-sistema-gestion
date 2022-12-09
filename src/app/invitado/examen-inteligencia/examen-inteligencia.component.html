@@ -1,1 +1,475 @@
-<p>examen-inteligencia works!</p>
+<h1>EXAMEN DE INTELIGENCIA</h1>
+<p> Los test que han sido desarrollados con el objetivo de evaluar la inteligencia permiten medir
+  aspectos más globales por ejemplo, la comprensión verbal,
+  de manera que gracias a este tipo de herramientas los psicólogos pueden evaluar y
+  conocer el potencial que posee una persona.</p>
+
+
+<nz-steps [nzCurrent]="current">
+  <nz-step nzTitle="PASO 1"></nz-step>
+  <nz-step nzTitle="PASO 2"></nz-step>
+  <nz-step nzTitle="PASO 3"></nz-step>
+  <nz-step nzTitle="PASO 4"></nz-step>
+  <nz-step nzTitle="PASO 5"></nz-step>
+</nz-steps>
+
+
+<div *ngIf="current == 0">
+
+
+  <h2>1) Continúa cada una de las sucesiones según el criterio que te parezca más sencillo.</h2>
+  <nz-form-item>
+    <nz-form-label [nzSpan]="isHorizontal ? 4 : null">1)  A, D, J, G:</nz-form-label>
+    <nz-form-control [nzSpan]="isHorizontal ? 14 : null" nzErrorTip="Please input your username!">
+      <input nz-input  placeholder="" />
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item>
+    <nz-form-label [nzSpan]="isHorizontal ? 4 : null">2) 1, 3, 6, 10:</nz-form-label>
+    <nz-form-control [nzSpan]="isHorizontal ? 14 : null" nzErrorTip="Please input your Password!">
+      <input nz-input  placeholder="" />
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item>
+    <nz-form-label [nzSpan]="isHorizontal ? 4 : null">3) 1, 1, 2, 3, 5:</nz-form-label>
+    <nz-form-control [nzSpan]="isHorizontal ? 14 : null" nzErrorTip="Please input your Password!">
+      <input nz-input  placeholder="" />
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item>
+    <nz-form-label [nzSpan]="isHorizontal ? 4 : null">4) 21, 20, 18, 15, 11:</nz-form-label>
+    <nz-form-control [nzSpan]="isHorizontal ? 14 : null" nzErrorTip="Please input your Password!">
+      <input nz-input placeholder="" />
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item>
+    <nz-form-label [nzSpan]="isHorizontal ? 4 : null">5) 8, 6, 7, 5, 6, 4:</nz-form-label>
+    <nz-form-control [nzSpan]="isHorizontal ? 14 : null" nzErrorTip="Please input your Password!">
+      <input nz-input placeholder="" />
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item>
+    <nz-form-label [nzSpan]="isHorizontal ? 4 : null">6) 65536, 256, 16:</nz-form-label>
+    <nz-form-control [nzSpan]="isHorizontal ? 14 : null" nzErrorTip="Please input your Password!">
+      <input nz-input placeholder="" />
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item>
+    <nz-form-label [nzSpan]="isHorizontal ? 4 : null">7) 1, 0, -1, 0:</nz-form-label>
+    <nz-form-control [nzSpan]="isHorizontal ? 14 : null" nzErrorTip="Please input your Password!">
+      <input nz-input  placeholder="" />
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item>
+    <nz-form-label [nzSpan]="isHorizontal ? 4 : null">8) 3968, 63, 8, 3:</nz-form-label>
+    <nz-form-control [nzSpan]="isHorizontal ? 14 : null" nzErrorTip="Please input your Password!">
+      <input nz-input  placeholder="" />
+    </nz-form-control>
+  </nz-form-item>
+</div>
+
+<div *ngIf="current == 1">
+
+  <h2>2) Continúa cada una de las sucesiones según el criterio que te parezca más sencillo.</h2>
+  <br>
+  <br>
+  <br>
+  <div class="seccion2">
+
+    <div>
+      <img src="https://t2.pb.ltmcdn.com/es/posts/7/1/3/img_3317_11_orig.jpg">
+      <br>
+      <br>
+      <br>
+      <nz-radio-group [(ngModel)]="radioValue1" nzName="radiogroup">
+        <label nz-radio nzValue="A">A</label>
+        <label nz-radio nzValue="B">B</label>
+        <label nz-radio nzValue="C">C</label>
+        <label nz-radio nzValue="D">D</label>
+      </nz-radio-group>
+    </div>
+
+    <div>
+      <img src="https://t1.pb.ltmcdn.com/es/posts/7/1/3/img_3317_12_orig.jpg">
+      <br>
+      <br>
+      <br>
+      <nz-radio-group [(ngModel)]="radioValue2" nzName="radiogroup">
+        <label nz-radio nzValue="A">A</label>
+        <label nz-radio nzValue="B">B</label>
+        <label nz-radio nzValue="C">C</label>
+        <label nz-radio nzValue="D">D</label>
+      </nz-radio-group>
+    </div>
+
+    <div>
+      <img src="https://t1.pb.ltmcdn.com/es/posts/7/1/3/img_3317_13_orig.jpg">
+      <br>
+      <br>
+      <br>
+      <nz-radio-group [(ngModel)]="radioValue3" nzName="radiogroup">
+        <label nz-radio nzValue="A">A</label>
+        <label nz-radio nzValue="B">B</label>
+        <label nz-radio nzValue="C">C</label>
+        <label nz-radio nzValue="D">D</label>
+      </nz-radio-group>
+    </div>
+
+    <div>
+      <img src="https://t2.pb.ltmcdn.com/es/posts/7/1/3/img_3317_14_orig.jpg">
+      <br>
+      <br>
+      <br>
+      <nz-radio-group [(ngModel)]="radioValue4" nzName="radiogroup">
+        <label nz-radio nzValue="A">A</label>
+        <label nz-radio nzValue="B">B</label>
+        <label nz-radio nzValue="C">C</label>
+        <label nz-radio nzValue="D">D</label>
+      </nz-radio-group>
+    </div>
+
+    <div>
+      <img src="https://t2.pb.ltmcdn.com/es/posts/7/1/3/img_3317_15_orig.jpg">
+      <br>
+      <br>
+      <br>
+      <nz-radio-group [(ngModel)]="radioValue5" nzName="radiogroup">
+        <label nz-radio nzValue="A">A</label>
+        <label nz-radio nzValue="B">B</label>
+        <label nz-radio nzValue="C">C</label>
+        <label nz-radio nzValue="D">D</label>
+      </nz-radio-group>
+    </div>
+
+    <div>
+      <img src="https://t1.pb.ltmcdn.com/es/posts/7/1/3/img_3317_16_orig.jpg">
+      <br>
+      <br>
+      <br>
+      <nz-radio-group [(ngModel)]="radioValue6" nzName="radiogroup">
+        <label nz-radio nzValue="A">A</label>
+        <label nz-radio nzValue="B">B</label>
+        <label nz-radio nzValue="C">C</label>
+        <label nz-radio nzValue="D">D</label>
+      </nz-radio-group>
+    </div>
+
+  </div>
+
+
+</div>
+
+<div *ngIf="current == 2">
+
+  <h2>3) Continúa la serie de figuras con la opción de la derecha que te parezca más razonable.</h2>
+  <br>
+  <br>
+  <br>
+  <div class="seccion3">
+
+    <div>
+      <img src="https://t2.pb.ltmcdn.com/es/posts/7/1/3/img_3317_19_orig.jpg">
+      <br>
+      <br>
+      <br>
+      <nz-radio-group [(ngModel)]="radioValue7" nzName="radiogroup">
+        <label nz-radio nzValue="A">A</label>
+        <label nz-radio nzValue="B">B</label>
+        <label nz-radio nzValue="C">C</label>
+        <label nz-radio nzValue="D">D</label>
+      </nz-radio-group>
+    </div>
+
+    <div>
+      <img src="https://t2.pb.ltmcdn.com/es/posts/7/1/3/img_3317_19_orig.jpg">
+      <br>
+      <br>
+      <br>
+      <nz-radio-group [(ngModel)]="radioValue8" nzName="radiogroup">
+        <label nz-radio nzValue="A">A</label>
+        <label nz-radio nzValue="B">B</label>
+        <label nz-radio nzValue="C">C</label>
+        <label nz-radio nzValue="D">D</label>
+      </nz-radio-group>
+    </div>
+
+    <div>
+      <img src="https://t1.pb.ltmcdn.com/es/posts/7/1/3/img_3317_21_orig.jpg">
+      <br>
+      <br>
+      <br>
+      <nz-radio-group [(ngModel)]="radioValue9" nzName="radiogroup">
+        <label nz-radio nzValue="A">A</label>
+        <label nz-radio nzValue="B">B</label>
+        <label nz-radio nzValue="C">C</label>
+        <label nz-radio nzValue="D">D</label>
+      </nz-radio-group>
+    </div>
+
+    <div>
+      <img src="https://t2.pb.ltmcdn.com/es/posts/7/1/3/img_3317_22_orig.jpg">
+      <br>
+      <br>
+      <br>
+      <nz-radio-group [(ngModel)]="radioValue10" nzName="radiogroup">
+        <label nz-radio nzValue="A">A</label>
+        <label nz-radio nzValue="B">B</label>
+        <label nz-radio nzValue="C">C</label>
+        <label nz-radio nzValue="D">D</label>
+      </nz-radio-group>
+    </div>
+
+    <div>
+      <img src="https://t2.pb.ltmcdn.com/es/posts/7/1/3/img_3317_15_orig.jpg">
+      <br>
+      <br>
+      <br>
+      <nz-radio-group [(ngModel)]="radioValue11" nzName="radiogroup">
+        <label nz-radio nzValue="A">A</label>
+        <label nz-radio nzValue="B">B</label>
+        <label nz-radio nzValue="C">C</label>
+        <label nz-radio nzValue="D">D</label>
+      </nz-radio-group>
+    </div>
+
+    <div>
+      <img src="https://t1.pb.ltmcdn.com/es/posts/7/1/3/img_3317_16_orig.jpg">
+      <br>
+      <br>
+      <br>
+      <nz-radio-group [(ngModel)]="radioValue12" nzName="radiogroup">
+        <label nz-radio nzValue="A">A</label>
+        <label nz-radio nzValue="B">B</label>
+        <label nz-radio nzValue="C">C</label>
+        <label nz-radio nzValue="D">D</label>
+      </nz-radio-group>
+    </div>
+
+
+
+    <div>
+      <img src="https://t1.pb.ltmcdn.com/es/posts/7/1/3/img_3317_24_orig.jpg">
+      <br>
+      <br>
+      <br>
+      <nz-radio-group [(ngModel)]="radioValue13" nzName="radiogroup">
+        <label nz-radio nzValue="A">A</label>
+        <label nz-radio nzValue="B">B</label>
+        <label nz-radio nzValue="C">C</label>
+        <label nz-radio nzValue="D">D</label>
+      </nz-radio-group>
+    </div>
+
+    <div>
+      <img src="https://t1.pb.ltmcdn.com/es/posts/7/1/3/img_3317_25_orig.jpg">
+      <br>
+      <br>
+      <br>
+      <nz-radio-group [(ngModel)]="radioValue14" nzName="radiogroup">
+        <label nz-radio nzValue="A">A</label>
+        <label nz-radio nzValue="B">B</label>
+        <label nz-radio nzValue="C">C</label>
+        <label nz-radio nzValue="D">D</label>
+      </nz-radio-group>
+    </div>
+
+
+    <div>
+      <img src="https://t2.pb.ltmcdn.com/es/posts/7/1/3/img_3317_26_orig.jpg">
+      <br>
+      <br>
+      <br>
+      <nz-radio-group [(ngModel)]="radioValue15" nzName="radiogroup">
+        <label nz-radio nzValue="A">A</label>
+        <label nz-radio nzValue="B">B</label>
+        <label nz-radio nzValue="C">C</label>
+        <label nz-radio nzValue="D">D</label>
+      </nz-radio-group>
+    </div>
+
+    <div>
+      <img src="https://t2.pb.ltmcdn.com/es/posts/7/1/3/img_3317_27_orig.jpg">
+      <br>
+      <br>
+      <br>
+      <nz-radio-group [(ngModel)]="radioValue16" nzName="radiogroup">
+        <label nz-radio nzValue="A">A</label>
+        <label nz-radio nzValue="B">B</label>
+        <label nz-radio nzValue="C">C</label>
+        <label nz-radio nzValue="D">D</label>
+      </nz-radio-group>
+    </div>
+
+  </div>
+
+
+
+</div>
+
+<div *ngIf="current == 3">
+  <h2>4)Completa cada fila con DOS opciones de la derecha.</h2>
+  <br>
+  <br>
+  <br>
+  <div class="seccion3">
+    <div>
+      <img src="https://t1.pb.ltmcdn.com/es/posts/7/1/3/img_3317_30_orig.jpg">
+      <br>
+      <br>
+      <br>
+      <nz-radio-group [(ngModel)]="radioValue17" nzName="radiogroup">
+        <label nz-radio nzValue="A">A</label>
+        <label nz-radio nzValue="B">B</label>
+        <label nz-radio nzValue="C">C</label>
+        <label nz-radio nzValue="D">D</label>
+      </nz-radio-group>
+    </div>
+
+    <div>
+      <img src="https://t1.pb.ltmcdn.com/es/posts/7/1/3/img_3317_31_orig.jpg">
+      <br>
+      <br>
+      <br>
+      <nz-radio-group [(ngModel)]="radioValue18" nzName="radiogroup">
+        <label nz-radio nzValue="A">A</label>
+        <label nz-radio nzValue="B">B</label>
+        <label nz-radio nzValue="C">C</label>
+        <label nz-radio nzValue="D">D</label>
+      </nz-radio-group>
+    </div>
+
+    <div>
+      <img src="https://t2.pb.ltmcdn.com/es/posts/7/1/3/img_3317_32_orig.jpg">
+      <br>
+      <br>
+      <br>
+      <nz-radio-group [(ngModel)]="radioValue19" nzName="radiogroup">
+        <label nz-radio nzValue="A">A</label>
+        <label nz-radio nzValue="B">B</label>
+        <label nz-radio nzValue="C">C</label>
+        <label nz-radio nzValue="D">D</label>
+      </nz-radio-group>
+    </div>
+
+    <div>
+      <img src="https://t2.pb.ltmcdn.com/es/posts/7/1/3/img_3317_33_orig.jpg">
+      <br>
+      <br>
+      <br>
+      <nz-radio-group [(ngModel)]="radioValue20" nzName="radiogroup">
+        <label nz-radio nzValue="A">A</label>
+        <label nz-radio nzValue="B">B</label>
+        <label nz-radio nzValue="C">C</label>
+        <label nz-radio nzValue="D">D</label>
+      </nz-radio-group>
+    </div>
+
+  </div>
+
+  <br>
+  <br>
+
+
+</div>
+
+<div *ngIf="current == 4">
+
+  <h2>5) Elige la opción de la derecha que te parezca más apropiada para completar la serie de la izquierda.</h2>
+  <div class="seccion3">
+    <div>
+      <img src="https://t2.pb.ltmcdn.com/es/posts/7/1/3/img_3317_33_orig.jpg">
+      <br>
+      <br>
+      <br>
+      <nz-radio-group [(ngModel)]="radioValue21" nzName="radiogroup">
+        <label nz-radio nzValue="A">A</label>
+        <label nz-radio nzValue="B">B</label>
+        <label nz-radio nzValue="C">C</label>
+        <label nz-radio nzValue="D">D</label>
+      </nz-radio-group>
+    </div>
+
+    <div>
+      <img src="https://t1.pb.ltmcdn.com/es/posts/7/1/3/img_3317_35_orig.jpg">
+      <br>
+      <br>
+      <br>
+      <nz-radio-group [(ngModel)]="radioValue22" nzName="radiogroup">
+        <label nz-radio nzValue="A">A</label>
+        <label nz-radio nzValue="B">B</label>
+        <label nz-radio nzValue="C">C</label>
+        <label nz-radio nzValue="D">D</label>
+      </nz-radio-group>
+    </div>
+
+    <div>
+      <img src="https://t2.pb.ltmcdn.com/es/posts/7/1/3/img_3317_36_orig.jpg">
+      <br>
+      <br>
+      <br>
+      <nz-radio-group [(ngModel)]="radioValue23" nzName="radiogroup">
+        <label nz-radio nzValue="A">A</label>
+        <label nz-radio nzValue="B">B</label>
+        <label nz-radio nzValue="C">C</label>
+        <label nz-radio nzValue="D">D</label>
+      </nz-radio-group>
+    </div>
+
+    <div>
+      <img src="https://t2.pb.ltmcdn.com/es/posts/7/1/3/img_3317_36_orig.jpg">
+      <br>
+      <br>
+      <br>
+      <nz-radio-group [(ngModel)]="radioValue24" nzName="radiogroup">
+        <label nz-radio nzValue="A">A</label>
+        <label nz-radio nzValue="B">B</label>
+        <label nz-radio nzValue="C">C</label>
+        <label nz-radio nzValue="D">D</label>
+      </nz-radio-group>
+    </div>
+
+    <div>
+      <img src="https://t1.pb.ltmcdn.com/es/posts/7/1/3/img_3317_38_orig.jpg">
+      <br>
+      <br>
+      <br>
+      <nz-radio-group [(ngModel)]="radioValue25" nzName="radiogroup">
+        <label nz-radio nzValue="A">A</label>
+        <label nz-radio nzValue="B">B</label>
+        <label nz-radio nzValue="C">C</label>
+        <label nz-radio nzValue="D">D</label>
+      </nz-radio-group>
+    </div>
+
+    <div>
+
+    </div>
+
+  </div>
+
+  <br>
+  <br>
+  <br>
+
+</div>
+
+<div class="steps-action">
+  <button nz-button nzType="default" (click)="pre()" *ngIf="current > 0">
+    <span>ANTERIOR</span>
+  </button>
+  <button nz-button nzType="default" (click)="next()" *ngIf="current < 4">
+    <span>SIGUIENTE</span>
+  </button>
+  <button nz-button nzType="primary" (click)="done()" *ngIf="current === 4">
+    <span>Done</span>
+  </button>
+</div>
+
+

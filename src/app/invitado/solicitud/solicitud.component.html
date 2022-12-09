@@ -1,1 +1,204 @@
-<p>solicitud works!</p>
+<form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+
+  <nz-upload
+    class="avatar-uploader"
+    nzAction="https://www.mocky.io/v2/5cc8019d300000980a055e76"
+    nzName="avatar"
+    nzListType="picture-card"
+    [nzShowUploadList]="false"
+    [nzBeforeUpload]="beforeUpload"
+    (nzChange)="handleChange($event)"
+  >
+    <ng-container *ngIf="!avatarUrl">
+      <span class="upload-icon" nz-icon [nzType]="loading ? 'loading' : 'plus'"></span>
+      <div class="ant-upload-text">SUBIR FOTO</div>
+    </ng-container>
+    <img *ngIf="avatarUrl" [src]="avatarUrl" style="width: 100%" />
+  </nz-upload>
+  <br>
+  <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Selecciona tu puesto" [(ngModel)]="selectedValue">
+    <nz-option nzLabel="Chef" nzValue="Chef"></nz-option>
+    <nz-option nzLabel="Mucama" nzValue="Mucama"></nz-option>
+    <nz-option nzLabel="Mesero" nzValue="Masagista"></nz-option>
+    <nz-option nzLabel="Entrenador" nzValue="Entrenador"></nz-option>
+    <nz-option nzLabel="Magista" nzValue="Masagista"></nz-option>
+  </nz-select>
+  <br>
+
+  <nz-collapse nzAccordion>
+    <nz-collapse-panel [nzHeader]="'INFORMACIÓN ACADEMICA'" [nzActive]="true">
+      <p><strong>Añade tu experiencia laboral</strong></p>
+      <div nz-form class="form-estudios">
+
+        <nz-form-item>
+          <nz-form-control nzErrorTip="Please input your username!">
+            <p>Centro educativo</p>
+            <div class="estudios">
+              <input nz-input placeholder="Centro educativo" [(ngModel)]="value" />
+              <br />
+              <br />
+              <p>Nivel de estudios</p>
+              <nz-select nzShowSearch nzAllowClear nzPlaceHolder="licenciatura" [(ngModel)]="selectedValue">
+                <nz-option nzLabel="Licenciatura" nzValue="jack"></nz-option>
+                <nz-option nzLabel="Media-Superior" nzValue="lucy"></nz-option>
+                <nz-option nzLabel="Posgrado" nzValue="tom"></nz-option>
+              </nz-select>
+            </div>
+          </nz-form-control>
+        </nz-form-item>
+
+        <nz-form-item>
+          <nz-form-control nzErrorTip="Please input your username!">
+            <div class="estudios">
+              <p>ÁREA PROFESIONAL</p>
+              <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Turismo" [(ngModel)]="selectedValue">
+                <nz-option nzLabel="TURISMO" nzValue="jack"></nz-option>
+                <nz-option nzLabel="HOTELERIA" nzValue="lucy"></nz-option>
+                <nz-option nzLabel="ADMINISTRACIÓN DE EMPRESAS" nzValue="tom"></nz-option>
+                <nz-option nzLabel="GASTRONOMÍA" nzValue="jack"></nz-option>
+                <nz-option nzLabel="CONTABILIDAD" nzValue="lucy"></nz-option>
+                <nz-option nzLabel="INGENIERIA EN GESTIÓN EMPRESARIAL" nzValue="tom"></nz-option>
+                <nz-option nzLabel="DERECHO" nzValue="jack"></nz-option>
+                <nz-option nzLabel="ING INFORMÁTICA" nzValue="lucy"></nz-option>
+                <nz-option nzLabel="ADMINISTRACIÓN DE RECURSOS HUMANOS" nzValue="tom"></nz-option>
+                <nz-option nzLabel="PSICOLOGÍA" nzValue="jack"></nz-option>
+                <nz-option nzLabel="COMERCIO INTERNACIONAL" nzValue="lucy"></nz-option>
+                <nz-option nzLabel="CONTADURIA PÚBLICA" nzValue="tom"></nz-option>
+                <nz-option nzLabel="MERCADOTECNIA" nzValue="jack"></nz-option>
+                <nz-option nzLabel="ING INDUSTRIAL" nzValue="lucy"></nz-option>
+                <nz-option nzLabel="SEGURIDAD PÚBLICA" nzValue="tom"></nz-option>
+                <nz-option nzLabel="NEGOCIOS INTERNACIONALES" nzValue="jack"></nz-option>
+                <nz-option nzLabel="LOGÍSTICA" nzValue="lucy"></nz-option>
+                <nz-option nzLabel="INFORMÁTICA" nzValue="tom"></nz-option>
+                <nz-option nzLabel="ING SISTEMAS COMPUTACIONALES" nzValue="jack"></nz-option>
+                <nz-option nzLabel="ING EN TELECOMUNICACIONES" nzValue="lucy"></nz-option>
+                <nz-option nzLabel="ING DE SOFTWARE" nzValue="tom"></nz-option>
+              </nz-select>
+              <br />
+              <br />
+              <p>¿Cursando Actualmente?</p>
+              <nz-radio-group [(ngModel)]="radioValue">
+                <label nz-radio nzValue="si">si</label>
+                <label nz-radio nzValue="no">no</label>
+              </nz-radio-group>
+            </div>
+          </nz-form-control>
+        </nz-form-item>
+        <button type="submit" class="btn">Guardar</button>
+      </div>
+
+    </nz-collapse-panel>
+
+    <nz-collapse-panel [nzHeader]="'EXPERIENCIA LABORAL'" [nzActive]="true">
+
+      <p><strong>Añade tu eduación y estudios</strong></p>
+      <div nz-form class="form-trabajo">
+
+        <nz-form-item>
+          <nz-form-control nzErrorTip="Please input your username!">
+            <div class="estudios">
+
+              <p>Nombre de la empresa</p>
+              <input nz-input placeholder="Centro educativo" [(ngModel)]="value" />
+              <br>
+              <br>
+
+              <p>CARGO</p>
+              <input nz-input placeholder="Cargo" [(ngModel)]="value" />
+              <br />
+              <br />
+
+              <p>Departamento</p>
+              <input nz-input placeholder="Centro educativo" [(ngModel)]="value" />
+              <br>
+              <br>
+            </div>
+          </nz-form-control>
+        </nz-form-item>
+
+        <nz-form-item>
+          <nz-form-control nzErrorTip="Please input your username!">
+            <div class="estudios">
+
+              <p>GIRO DE LA EMPRESA</p>
+              <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Publicidad/RRPP" [(ngModel)]="selectedValue">
+                <nz-option nzLabel="tomas" nzValue="jack"></nz-option>
+                <nz-option nzLabel="Lucy" nzValue="lucy"></nz-option>
+                <nz-option nzLabel="Tom" nzValue="tom"></nz-option>
+              </nz-select>
+
+
+              <p>¿Sigo trabajando aqui?</p>
+              <nz-radio-group [(ngModel)]="radioValue">
+                <label nz-radio nzValue="si">si</label>
+                <label nz-radio nzValue="no">no</label>
+              </nz-radio-group>
+
+
+            </div>
+          </nz-form-control>
+        </nz-form-item>
+        <button type="submit" class="btn">Guardar</button>
+      </div>
+
+    </nz-collapse-panel>
+
+
+    <nz-collapse-panel [nzHeader]="'CONOCIMIENTOS Y HABILIDADES'" [nzActive]="true">
+
+      <p><strong>AÑADE TUS CONOCIMIENTOS Y HABILIDADES</strong></p>
+
+      <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+        <nz-form-item *ngFor="let control of listOfControl; let i = index">
+          <nz-form-label [nzXs]="24" [nzSm]="4" *ngIf="i === 0" [nzFor]="control.controlInstance">
+            HABILIDADES
+          </nz-form-label>
+          <nz-form-control
+            [nzXs]="24"
+            [nzSm]="20"
+            [nzOffset]="i === 0 ? 0 : 4"
+            nzErrorTip="Please input passenger's name or delete this field."
+          >
+
+            <nz-tree-select
+              style="width: 250px"
+              nzPlaceHolder="Please select"
+              [nzExpandedKeys]="expandKeys"
+              [(ngModel)]="value"
+              [nzDropdownMatchSelectWidth]="true"
+              [nzDropdownStyle]="{ 'max-height': '300px' }"
+              [nzNodes]="nodes"
+              [nzAsyncData]="true"
+              (nzExpandChange)="onExpandChange($event)"
+            ></nz-tree-select>
+
+
+            <span
+              nz-icon
+              nzType="minus-circle-o"
+              class="dynamic-delete-button"
+              (click)="removeField(control, $event)"
+            ></span>
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-control [nzXs]="{ span: 24, offset: 0 }" [nzSm]="{ span: 20, offset: 4 }">
+            <button nz-button nzType="dashed" class="add-button" (click)="addField($event)">
+              <span nz-icon nzType="plus"></span>
+              Agregar
+            </button>
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-control [nzXs]="{ span: 24, offset: 0 }" [nzSm]="{ span: 20, offset: 4 }">
+            <button nz-button nzType="primary">AGREGAR</button>
+          </nz-form-control>
+        </nz-form-item>
+      </form>
+
+    </nz-collapse-panel>
+
+
+  </nz-collapse>
+
+</form>
