@@ -2,10 +2,9 @@
   <div style="margin-left: 500px" class="center">
     <nz-upload
     class="avatar-uploader"
-    nzAction="https://www.mocky.io/v2/5cc8019d300000980a055e76"
     nzName="avatar"
     nzListType="picture-card"
-    [nzShowUploadList]="false"
+    [nzShowUploadList]="true"
     [nzBeforeUpload]="beforeUpload"
     (nzChange)="handleChange($event)"
   >
@@ -19,11 +18,11 @@
   </div>
   <div style="margin-left: 465px" class="center">
   <nz-select nzShowSearch nzAllowClear nzPlaceHolder="Selecciona tu puesto" [(ngModel)]="selectedValue">
-    <nz-option nzLabel="Chef" nzValue="Chef"></nz-option>
-    <nz-option nzLabel="Mucama" nzValue="Mucama"></nz-option>
-    <nz-option nzLabel="Mesero" nzValue="Masagista"></nz-option>
-    <nz-option nzLabel="Entrenador" nzValue="Entrenador"></nz-option>
-    <nz-option nzLabel="Magista" nzValue="Masagista"></nz-option>
+    <nz-option nzLabel="CHEF" nzValue="Chef"></nz-option>
+    <nz-option nzLabel="MUCAMA" nzValue="Mucama"></nz-option>
+    <nz-option nzLabel="MESERO" nzValue="Masagista"></nz-option>
+    <nz-option nzLabel="ENTRENADOR" nzValue="Entrenador"></nz-option>
+    <nz-option nzLabel="INGENIERO" nzValue="Masagista"></nz-option>
   </nz-select>
 
   </div>
@@ -150,7 +149,7 @@
 
       <p><strong>AÑADE TUS CONOCIMIENTOS Y HABILIDADES</strong></p>
 
-      <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+
         <nz-form-item *ngFor="let control of listOfControl; let i = index">
           <nz-form-label [nzXs]="24" [nzSm]="4" *ngIf="i === 0" [nzFor]="control.controlInstance">
             HABILIDADES
@@ -196,7 +195,8 @@
             <button nz-button nzType="primary">AGREGAR</button>
           </nz-form-control>
         </nz-form-item>
-      </form>
+
+
 
     </nz-collapse-panel>
 

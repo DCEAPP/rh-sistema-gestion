@@ -22,6 +22,7 @@ import {NzFormModule} from 'ng-zorro-antd/form';
 import {NzModalModule} from 'ng-zorro-antd/modal';
 import {ReactiveFormsModule} from '@angular/forms';
 import {OrgChartModule} from './modules/org-chart/org-chart.module';
+import {NzAvatarModule} from "ng-zorro-antd/avatar";
 
 
 
@@ -31,21 +32,22 @@ const antdModule = [
 ];
 
 @NgModule({
-  imports: [
-    SharedModule,
-    PuestosRoutingModule,
-    ...antdModule,
-    NzSwitchModule,
-    NzCardModule,
-    NzTableModule,
-    NzDividerModule,
-    NzGridModule,
-    OrgChartModule,
-    NzInputModule,
-    NzFormModule,
-    NzModalModule,
-    ReactiveFormsModule
-  ],
+    imports: [
+        SharedModule,
+        PuestosRoutingModule,
+        ...antdModule,
+        NzSwitchModule,
+        NzCardModule,
+        NzTableModule,
+        NzDividerModule,
+        NzGridModule,
+        OrgChartModule,
+        NzInputModule,
+        NzFormModule,
+        NzModalModule,
+        ReactiveFormsModule,
+        NzAvatarModule
+    ],
   exports: [],
   declarations: [
     OrganigramaComponent,

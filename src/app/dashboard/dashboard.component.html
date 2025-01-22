@@ -1,1 +1,208 @@
-<p>Dashboard Component Works!</p>
+<div class="row">
+  <div class="col-md-6 col-lg-3">
+    <nz-card>
+      <div class="media align-items-center">
+        <nz-avatar [nzSize]="50" nzIcon="line-chart" class="ant-avatar-cyan"  ></nz-avatar>
+        <div class="m-l-15">
+          <h2 class="m-b-0">+ 17.21%</h2>
+          <p class="m-b-0 text-muted">Crecimiento </p>
+        </div>
+
+      </div>
+    </nz-card>
+  </div>
+  <div class="col-md-6 col-lg-3">
+    <nz-card>
+      <div class="media align-items-center">
+        <nz-avatar [nzSize]="60" nzIcon="dollar" class="ant-avatar-blue"  ></nz-avatar>
+        <div class="m-l-15">
+          <h2 class="m-b-0">$23,523.00</h2>
+          <p class="m-b-0 text-muted">Pago de Sueldos</p>
+        </div>
+      </div>
+    </nz-card>
+  </div>
+  <div class="col-md-6 col-lg-3">
+    <nz-card>
+      <div class="media align-items-center">
+        <nz-avatar [nzSize]="50" nzIcon="profile" class="ant-avatar-gold"  ></nz-avatar>
+        <div class="m-l-15">
+          <h2 class="m-b-0">20</h2>
+          <p class="m-b-0 text-muted">Contrataciones</p>
+        </div>
+      </div>
+    </nz-card>
+  </div>
+  <div class="col-md-6 col-lg-3">
+    <nz-card>
+      <div class="media align-items-center">
+        <nz-avatar [nzSize]="50" nzIcon="user" class="ant-avatar-purple"  ></nz-avatar>
+        <div class="m-l-15">
+          <h2 class="m-b-0">11</h2>
+          <p class="m-b-0 text-muted">Vacantes</p>
+        </div>
+      </div>
+    </nz-card>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12 col-lg-8">
+    <nz-card>
+      <div class="d-flex justify-content-between align-items-center">
+        <h5>Historial de Contrataciones</h5>
+        <div>
+          <nz-radio-group [(ngModel)]="revenueChartFormat">
+            <label nz-radio-button nzValue="revenueMonth">Mensual</label>
+            <label nz-radio-button nzValue="revenueYear">Anual</label>
+          </nz-radio-group>
+        </div>
+      </div>
+      <div class="m-t-50" style="height: 330px">
+        <canvas ngChartjs
+                [datasets]="revenueChartData"
+                [labels]="revenueChartLabels"
+                [options]="revenueChartOptions"
+                [colors]="revenueChartColors"
+                [legend]="false"
+                [chartType]="revenueChartType">
+        </canvas>
+      </div>
+    </nz-card>
+  </div>
+  <div class="col-md-12 col-lg-4">
+    <nz-card>
+      <h5 class="m-b-0">Evaluaciones</h5>
+      <div class="m-v-60 text-center" style="height: 200px">
+        <canvas ngChartjs
+                [data]="customersChartData"
+                [labels]="customersChartLabels"
+                [chartType]="customersChartType"
+                [colors]="customersChartColors"
+                [options]="customersChartOptions"
+                [legend]="false">
+        </canvas>
+      </div>
+      <div class="row border-top p-t-25">
+        <div class="col-4">
+          <div class="d-flex justify-content-center">
+            <div class="media align-items-center">
+              <nz-badge nzStatus="default" [nzColor]="cyan"></nz-badge>
+              <div class="m-l-5">
+                <h4 class="m-b-0">20</h4>
+                <p class="m-b-0 muted">Contratados</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="d-flex justify-content-center">
+            <div class="media align-items-center">
+              <nz-badge nzStatus="default" [nzColor]="purple"></nz-badge>
+              <div class="m-l-5">
+                <h4 class="m-b-0">50</h4>
+                <p class="m-b-0 muted">Solicitudes</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="d-flex justify-content-center">
+            <div class="media align-items-center">
+              <nz-badge nzStatus="default" [nzColor]="gold"></nz-badge>
+              <div class="m-l-5">
+                <h4 class="m-b-0">5</h4>
+                <p class="m-b-0 muted">Rechazados</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nz-card>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12 col-lg-4">
+    <nz-card>
+      <div class="d-flex justify-content-between align-items-center">
+        <div>
+          <h2 class="m-b-0">$47,267.00</h2>
+          <p class="m-b-0 text-muted">Ahorros en Reclutadores</p>
+        </div>
+        <div>
+          <nz-tag [nzColor]="'cyan'">+ 5.7%</nz-tag>
+        </div>
+      </div>
+      <div class="m-t-50" style="height: 410px">
+        <canvas ngChartjs
+                [datasets]="avgProfitChartData"
+                [labels]="avgProfitChartLabels"
+                [options]="avgProfitChartOptions"
+                [colors]="avgProfitChartColors"
+                [legend]="avgProfitChartLegend"
+                [chartType]="avgProfitChartType">
+        </canvas>
+      </div>
+    </nz-card>
+  </div>
+  <div class="col-md-12 col-lg-4">
+    <nz-card>
+      <canvas ngChartjs
+              height="480px"
+              [data]="polarAreaChartData"
+              [labels]="polarAreaChartLabels"
+              [legend]="polarAreaLegend"
+              [options]="polarAreaChartOptions"
+              [colors]="polarAreaChartColors"
+              [chartType]="polarAreaChartType">
+      </canvas>
+    </nz-card>
+  </div>
+
+  <div class="col-md-12 col-lg-4">
+    <nz-card>
+      <div class="d-flex justify-content-between align-items-center">
+        <h5 class="m-b-0">ULTIMAS SOLICITUDES RECIBIDAS</h5>
+        <div>
+          <a nz-button nzType="default" nzSize="small">View All</a>
+        </div>
+      </div>
+      <div class="m-t-30">
+        <div [ngClass]="{'m-b-25': !last}" *ngFor="let item of fileList; let last = last">
+          <div class="d-flex align-items-center justify-content-between">
+            <div class="media align-items-center">
+              <div class="font-size-35">
+                <i nz-icon [nzType]="item.icon" theme="twotone" [twoToneColor]="item.color"></i>
+              </div>
+              <div class="m-l-15">
+                <h6 class="m-b-0"><a class="text-dark">{{item.name}}</a></h6>
+                <p class="text-muted m-b-0">{{item.size}}</p>
+              </div>
+            </div>
+            <div>
+              <a class="text-dark font-size-20" nz-dropdown [nzTrigger]="'click'" [nzPlacement]="'bottomRight'" [nzDropdownMenu]="latestUploadDropDown">
+                <i nz-icon nzType="ellipsis" theme="outline"></i>
+              </a>
+              <nz-dropdown-menu #latestUploadDropDown="nzDropdownMenu">
+                <ul nz-menu>
+                  <li nz-menu-item>
+                    <i nz-icon nzType="eye" theme="outline"></i>
+                    <span class="m-l-5">View</span>
+                  </li>
+                  <li nz-menu-item>
+                    <i nz-icon nzType="download" theme="outline"></i>
+                    <span class="m-l-5">Download</span>
+                  </li>
+                  <li nz-menu-item>
+                    <i nz-icon nzType="delete" theme="outline"></i>
+                    <span class="m-l-5">Remove</span>
+                  </li>
+                </ul>
+              </nz-dropdown-menu>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nz-card>
+  </div>
+</div>
+
